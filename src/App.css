@@ -3,9 +3,9 @@
 }
 
 .App-header {
-  background-color: #ede1e1
+  background-color: #FFEBCD	;
   ;
-  font-family: 'Hanalei Fill', cursive;
+  font-family: 'Zen Loop', cursive;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
