@@ -1,9 +1,23 @@
 function Menu() {
+
+  function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+  }
+  
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+
   return (
     <div className="menu-item">
-        <span> + </span>
-        <a>Gallery</a>
-        <a>Contact</a>
+        <div id="mySidenav" className="sidenav">
+  <a  className="closebtn" onClick={closeNav}>&#x2715;</a>
+  <a href="#">Gallery</a>
+  <a href="#">Contact</a>
+
+</div>
+<span className="openbtn" onClick={openNav}>&#9776;</span>
     </div>
   );
 }

@@ -10,7 +10,7 @@ function App() {
           <source src="http://streaming.tdiradio.com:8000/house.mp3" type="audio/mpeg" />
         </audio>
         <p>Coming soon...</p>
-        {/* <Menu /> */}
+        <Menu />
       </header>
     </div>
   );
