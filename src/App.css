@@ -17,7 +17,8 @@
 }
 
 .menu-item {
-  position: absolute;
+  /* position: absolute; */
+  position: fixed; 
   top: 0;
   right: 0;
     color:#000000;
@@ -75,17 +76,18 @@
   width: 350px;
   outline:none;
   border-bottom: 2px solid black;
+  background-color: transparent;
 }
 
 .btn {
   text-align: center;
-  padding-top: 30px;
+  padding-top: 50px;
   padding-bottom: 15px;
   border: none;
   width: 100px;
   outline:none;
   border-bottom: 5px solid black;
-  background-color: white;
+  background-color: transparent;
 }
 
 a {
@@ -111,14 +113,41 @@ a {
 }
 
 .footer {
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 120px;
+  min-height: 30vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: #000000;
+  position: relative;
 }
 
 .contact {
-  width: 100%;
-  height: 400px;
+  /* background-image: url('./config/works/cubanBird.jpg'); */
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: #000000;
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
+
+.gallery {
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: #000000;
+  position: relative;
+}
+
+.apt {
+background-color: #000000;
+margin: 0px auto;}
 

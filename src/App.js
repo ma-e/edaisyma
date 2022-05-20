@@ -2,6 +2,7 @@ import './App.css';
 import Contact from './Contact';
 import Footer from './Footer';
 import Menu from './Menu';
+import Gallery from './Gallery';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         </audio>
       </header>
       <Menu />
+      <Gallery />
       <Contact />
       <Footer />
     </div>
