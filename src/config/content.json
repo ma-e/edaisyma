@@ -1,9 +1,9 @@
 {
     "images": [
         {
-            displayName: "Cuban Bird",
-            url: "../config/works/cubanBird",
-            desc: "A cuban bird."
+            "displayName": "Cuban Bird",
+            "url": "../config/works/cubanBird.png",
+            "desc": "A cuban bird."
         },
         {
             "displayName": "Baby Bird",

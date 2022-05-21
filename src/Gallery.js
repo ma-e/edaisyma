@@ -1,23 +1,34 @@
-import SimpleImageSlider from "react-simple-image-slider";
+import Slider from "react-slick";
+import mao from './config/works/mao.jpg';
+import babyBird from './config/works/babyBird.jpg';
+import cubanBird from './config/works/cubanBird.jpg';
 
-const images = [
-    { url: "../config/works/cubanBird" },
-    { url: "../config/works/babyBird" },
-    { url: "../config/works/mao" },
-];
+// const images = [
+//     { url: "./config/works/cubanBird.jpg" },
+//     { url: "./config/works/babyBird.jpg" },
+//     { url: "./config/works/mao.jpg" },
+// ];
+
+const images = [mao, babyBird, cubanBird];
 
 function Gallery() {
-
+    var settings = {
+        dots: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+    };
     return (
-        <div id="gallery" className="gallery">
+        <div id="gallery" className="gallery sc">
             <h1>Gallery</h1>
-            {/* <SimpleImageSlider
-                width={896}
-                height={504}
-                images={images}
-                showBullets={true}
-                showNavs={true}
-            /> */}
+            <Slider {...settings}>
+                {images.map((img, i) =>
+                    <div key={i}>
+                        <img src={img} />
+                    </div>
+                )}
+
+            </Slider>
         </div >
     );
 }

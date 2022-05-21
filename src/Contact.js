@@ -8,7 +8,7 @@ function Contact() {
             {!disableForm ? <form >
                 <input className="textField" type="text" id="name" name="fname" placeholder="Name" /><br />
                 <input className="textField" type="email" id="email" name="email" placeholder="Email" pattern=".+@globex\.com" /><br />
-                <textarea className="textField" type="message" id="message" name="message" placeholder="Message" minlength="20" /><br />
+                <textarea className="textField" type="message" id="message" name="message" placeholder="Message" minLength="20" /><br />
                 <input className="btn" type="submit" value='Send &#x2192;' onClick={() => setDisableForm(true)}></input>
             </form> :
                 <div><br /><br /><br />
