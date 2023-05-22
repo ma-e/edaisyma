@@ -1,6 +1,5 @@
-# edaisyma
+# edaisma.com
 This project is where I publish my art works.
 
-# cmd
-npm install
-npm start
+# Command
+npm install & npm run start

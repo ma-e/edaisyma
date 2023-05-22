@@ -1,13 +1,17 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from 'react'
+import { createRoot } from "react-dom/client"
+import { Suspense } from "react"
+import { App } from "./App"
+import { Underlay, Overlay } from "./DirtyFigmaExport"
+import "./styles.css"
+import Menu from "./Menu"
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
-reportWebVitals();
+createRoot(document.getElementById("root")).render(
+  <>
+    <Underlay />
+    <Suspense fallback={null}>
+      <App />
+    </Suspense>
+    <Overlay />
+  </>,
+)
