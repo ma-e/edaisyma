@@ -74,9 +74,9 @@ export function Underlay() {
           alignItems: "flex-end",
           justifyContent: "center",
         }}>
-        {/* <p style={{ flex: "1 1 0%", fontSize: 250, lineHeight: "1em", color: "black", margin: 0, letterSpacing: -10 }}>Daisy Ma</p> */}
+        {/* <p style={{ flex: "1 1 0%", fontSize: 250, lineHeight: "1em", color: "black", margin: 0, letterSpacing: -10 }}>E Ma</p> */}
         <div style={{ width: 10 }} />
-        <p style={{ flex: "1 1 0%", fontSize: 250, lineHeight: "100%", textAlign: "right", color: "black", margin: 0, letterSpacing: -10 }}>Daisy Ma</p>
+        <p style={{ flex: "1 1 0%", fontSize: 250, lineHeight: "100%", textAlign: "right", color: "black", margin: 0, letterSpacing: -10 }}>E Ma</p>
       </div>
       <div style={{ height: 60 }} />
       <div
