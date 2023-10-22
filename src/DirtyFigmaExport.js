@@ -1,5 +1,4 @@
 import Footer from "./Footer"
-import Menu from './Menu';
 
 export function Underlay() {
   return (
@@ -17,7 +16,6 @@ export function Underlay() {
         justifyContent: "flex-start",
         pointerEvents: "none",
       }}>
-      {/* <Menu /> TODO */}
       <div style={{ width: "100%", padding: 0, display: "inline-flex", flexDirection: "row", alignItems: "center", justifyContent: "center" }}>
         <p
           style={{

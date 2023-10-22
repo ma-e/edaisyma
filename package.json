@@ -15,10 +15,12 @@
     "@react-three/postprocessing": "2.7.0",
     "@react-three/rapier": "0.9.0",
     "@types/three": "0.144.0",
+    "history": "^5.3.0",
     "leva": "0.9.34",
     "maath": "0.4.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-router-dom": "^6.17.0",
     "react-scripts": "^5.0.1",
     "three": "0.146.0"
   },

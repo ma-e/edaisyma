@@ -1,12 +1,15 @@
-function Footer() {
+import React from "react";
+import { Link } from "react-router-dom";
 
+function Footer() {
   return (
-    <div className="footer" >
-      <span >
-        © 2023 Daisy Ma. All rights reserved.
-      </span>
-    </div>
+    <Link to="/contact">
+      <div className="footer" >
+        <span >
+          © 2023 E Ma. All rights reserved.
+        </span>
+      </div>
+    </Link>
   );
 }
-
 export default Footer;
