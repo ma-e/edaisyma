@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import blogs from './Blogs';
+import "./Blog.css"
 
 const BlogPost = () => {
     const { id } = useParams(); // Use the useParams hook to get the 'id' parameter

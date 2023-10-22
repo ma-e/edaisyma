@@ -61,7 +61,7 @@ const LandingPage = () => (
                 <directionalLight position={[0, -15, -0]} intensity={4} color="red" />
                 <Physics gravity={[0, 0, 0]}>
                     <Pointer />
-                    {baubles.map((props, i) => <Bauble key={i} {...props} />) /* prettier-ignore */}
+                    {baubles.map((props, i) => <Bauble key={i} {...props} />)}
                 </Physics>
                 <Environment files="/adamsbridge.hdr" />
                 <EffectComposer multisampling={0}>

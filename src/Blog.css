@@ -1,0 +1,62 @@
+.blog-container {
+    margin: 100 auto;
+    padding: 50px 50px 50px 50px;
+    box-sizing: border-box;
+}
+
+/* Style the title of the Blog Page */
+.blog-title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin: 60px 0;
+}
+
+/* Style the list of blogs */
+.blog-list {
+    list-style: none;
+    padding: 50px;
+}
+
+.blog-list-item {
+    margin: 10px 0;
+    padding: 50px;
+    /* Add padding around each list item */
+    background-color: #f5f5f5;
+    /* Background color */
+    border: 1px solid #ddd;
+    /* Border */
+    border-radius: 5px;
+    /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Box shadow for a subtle lift */
+    transition: background-color 0.3s ease;
+}
+
+.blog-list-item a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.blog-list-item a:hover {
+    color: #007bff;
+    /* Change the color on hover */
+}
+
+/* BlogPost.css */
+
+.blof-container {
+    padding: 20px;
+    /* Adjust the padding as needed */
+}
+
+.blog-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.blog-content {
+    padding: 50px;
+}

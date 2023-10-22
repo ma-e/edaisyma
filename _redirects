@@ -1,0 +1,9 @@
+# Redirect all routes to index.html for client-side routing
+/*    /index.html   200
+
+# Additional route-specific redirects
+/about   /about   200
+/contact /contact   200
+/ideas   /ideas   200
+/blog    /blog   200
+/blog/:id    /blog/:id   200

@@ -2,6 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import blogs from './Blogs';
+import "./Blog.css"
 
 const BlogPage = () => {
     return (
