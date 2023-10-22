@@ -6,14 +6,6 @@ import { EffectComposer, SSAO } from "@react-three/postprocessing"
 import { BallCollider, Physics, RigidBody, CylinderCollider } from "@react-three/rapier"
 import { Underlay, Overlay } from "./DirtyFigmaExport"
 import { Suspense } from "react"
-import { useNavigate } from "react-router-dom";
-import { useHistory } from "react-router-dom";
-
-// function Foo() {
-//     // const history = useHistory();
-//     const navigate = useNavigate();
-//     navigate("/contact");
-// }
 
 THREE.ColorManagement.legacyMode = false
 const baubleMaterial = new THREE.MeshLambertMaterial({ color: "#c0a0a0", emissive: "red" })
@@ -78,8 +70,7 @@ const LandingPage = () => (
                 </EffectComposer>
             </Canvas>
         </Suspense>
-        <Overlay />
-
+        {/* <Overlay /> */}
     </>
 )
 

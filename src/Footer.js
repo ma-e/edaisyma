@@ -8,6 +8,7 @@ function Footer() {
         <span >
           © 2023 E Ma. All rights reserved.
         </span>
+
       </div>
     </Link>
   );

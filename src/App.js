@@ -1,28 +1,33 @@
-import React from "react";
-import { Route, useNavigate } from "react-router-dom";
-import LandingPage from "./LandingPage";
+// Import the necessary components
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Menu from './Menu';
+import Ideas from "./Ideas";
+import LandingPage from './LandingPage';
+import Layout from './Layout';
+import AboutMe from './AboutMe';
+import './styles.css';
+import BlogPage from './BlogPage';
+import BlogPost from './BlogPost';
 import Contact from "./Contact";
-import Footer from "./Footer";
+import Footer from './Footer';
 
-export default function App() {
-  let navigate = useNavigate();
+function App() {
   return (
     <>
-      <button
-        onClick={() => {
-          navigate("/contact");
-        }}
-      >
-        Navigate programmatically
-      </button>
-      <Route index path="/" element={<Contact />} />
+      <Menu />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/about" element={<AboutMe />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/ideas" element={<Ideas />} />
+          <Route path="/blog" element={<BlogPage />} />
+          <Route path="/blog/:id" element={<BlogPost />} />
+        </Routes>
+      </BrowserRouter>
+      {/* <Footer /> */}
     </>
   );
 }
 
-
-{/* <Route path="/footer" element={<Footer />}
-      />
-      <Route path="/contact" element={<Contact />}
-      />
-      <Route path="*" element={<div> Not Found or You do not have permission.</div>} /> */}
+export default App;

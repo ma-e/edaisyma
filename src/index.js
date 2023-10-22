@@ -1,23 +1,11 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import "./styles.css";
-import App from "./App";
-import { createBrowserHistory } from "history";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import LandingPage from './LandingPage';
-import Contact from "./Contact";
-import Footer from "./Footer";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css'; // You might have a separate CSS file to style your app.
+import App from './App'; // Import your main App component or the entry point of your application.
 
-const rootElement = document.getElementById("root");
-const customHistory = createBrowserHistory();
-
-ReactDOM.createRoot(rootElement).render(
-  <Router>
-    <Routes>
-      <Route index path="/" element={<LandingPage />} />
-      <Route index path="/contact" element={<Contact />} />
-      <Route index path="/footer" element={<Footer />} />
-    </Routes>
-  </Router>
-
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root')
 );

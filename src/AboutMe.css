@@ -1,0 +1,39 @@
+.about-me {
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    padding: 20px;
+}
+
+.content {
+    text-align: center;
+    padding: 20px;
+}
+
+.content h1 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.image-container {
+    width: 500px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.profile-image {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.content p {
+    font-size: 28px;
+    /* line-height: 2.5; */
+    padding: 20px;
+    /* Add padding around the text */
+}
