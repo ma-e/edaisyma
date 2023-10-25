@@ -1,11 +1,8 @@
 body {
   font-family: 'Playpen Sans', cursive;
-  padding: 50px 50px 50px 50px;
-  overflow: auto;
 }
 
 .container {
-  max-width: 1200px;
   margin: 100 auto;
   padding: 50px 50px 50px 50px;
   box-sizing: border-box;
