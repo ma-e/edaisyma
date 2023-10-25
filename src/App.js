@@ -10,6 +10,7 @@ import BlogPage from './BlogPage';
 import BlogPost from './BlogPost';
 import Contact from "./Contact";
 import Footer from './Footer';
+import Gallery from "./Gallery";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/ideas" element={<Ideas />} />
           <Route path="/blog" element={<BlogPage />} />
+          {/* <Route path="/gallery" element={<Gallery />} /> */}
           <Route path="/blog/:id" element={<BlogPost />} />
         </Routes>
       </BrowserRouter>

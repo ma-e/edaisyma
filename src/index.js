@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css'; // You might have a separate CSS file to style your app.
-import App from './App'; // Import your main App component or the entry point of your application.
+import './index.css';
+import App from './App';
 
 ReactDOM.render(
   <React.StrictMode>
