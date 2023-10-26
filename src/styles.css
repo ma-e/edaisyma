@@ -3,7 +3,5 @@ body {
 }
 
 .container {
-  margin: 100 auto;
-  padding: 50px 50px 50px 50px;
-  box-sizing: border-box;
+  padding: 100px 50px 50px 50px;
 }
