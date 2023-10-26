@@ -18,7 +18,7 @@
 
 .image-container {
     width: 500px;
-    height: 500px;
+    height: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -26,18 +26,25 @@
     padding: 20px;
 }
 
+.card {
+    overflow: hidden;
+    box-shadow: 0 4px 8px 0 rgba(241, 239, 239, 0.2);
+    margin: 8px;
+}
+
 .profile-image {
-    float: left;
-    width: 500px;
-    height: 500px;
-    object-fit: cover;
+    width: 30vw;
+    height: 30vw;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contian;
     -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
 }
 
 .content p {
     font-size: 28px;
-    /* line-height: 2.5; */
+    line-height: 2.5;
     padding: 20px;
 }
 
@@ -49,13 +56,8 @@
     padding: 0 8px;
 }
 
-.card {
-    box-shadow: 0 4px 8px 0 rgba(241, 239, 239, 0.2);
-    margin: 8px;
-}
-
 .about-section {
-    margin: 400;
+    margin: 800;
     padding: 50px;
     text-align: center;
     background-color: pink;
@@ -73,7 +75,6 @@
 }
 
 .title {
-    /* color: grey; */
     font-weight: 700;
 }
 

@@ -7,7 +7,7 @@ const Menu = () => {
       <ul>
         <li><a href="/"></a></li>
         <li><a href="/">MAE</a></li>
-        <li><a href="/about">About Me</a></li>
+        <li><a href="/about">Me</a></li>
         <li><a href="/blog">Blog</a></li>
         {/* <li><a href="/contact">Contact</a></li> */}
         <li><a href="/gallery">Gallery</a></li>
