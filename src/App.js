@@ -9,7 +9,6 @@ import './styles.css';
 import BlogPage from './BlogPage';
 import BlogPost from './BlogPost';
 import Contact from "./Contact";
-import Footer from './Footer';
 import Gallery from "./Gallery";
 
 function App() {
@@ -27,7 +26,6 @@ function App() {
           <Route path="/blog/:id" element={<BlogPost />} />
         </Routes>
       </BrowserRouter>
-      {/* <Footer /> */}
     </>
   );
 }

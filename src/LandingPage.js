@@ -6,6 +6,7 @@ import { EffectComposer, SSAO } from "@react-three/postprocessing"
 import { BallCollider, Physics, RigidBody, CylinderCollider } from "@react-three/rapier"
 import { Underlay, Overlay } from "./DirtyFigmaExport"
 import { Suspense } from "react"
+import Footer from './Footer';
 
 THREE.ColorManagement.legacyMode = false
 const baubleMaterial = new THREE.MeshLambertMaterial({ color: "#c0a0a0", emissive: "red" })
@@ -71,6 +72,7 @@ const LandingPage = () => (
             </Canvas>
         </Suspense>
         {/* <Overlay /> */}
+        <Footer />
     </>
 )
 

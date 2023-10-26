@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import blogs from './Blogs';
 import "./Blog.css"
+import Footer from './Footer';
 
 const BlogPost = () => {
     const { id } = useParams(); // Use the useParams hook to get the 'id' parameter
@@ -14,10 +15,13 @@ const BlogPost = () => {
     }
 
     return (
-        <div className="container">
-            <h1 className="blog-title">{blog.title}</h1>
-            <p className="blog-content">{blog.content}</p>
-        </div>
+        <>
+            <div className="container">
+                <h1 className="blog-title">{blog.title}</h1>
+                <p className="blog-content">{blog.content}</p>
+            </div>
+            {/* <Footer /> */}
+        </>
     );
 };
 
