@@ -22,7 +22,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/ideas" element={<Ideas />} />
           <Route path="/blog" element={<BlogPage />} />
-          {/* <Route path="/gallery" element={<Gallery />} /> */}
+          <Route path="/gallery" element={<Gallery />} />
           <Route path="/blog/:id" element={<BlogPost />} />
         </Routes>
       </BrowserRouter>
