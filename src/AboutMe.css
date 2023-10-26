@@ -31,6 +31,8 @@
     width: 500px;
     height: 500px;
     object-fit: cover;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
 }
 
 .content p {

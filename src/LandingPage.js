@@ -72,7 +72,7 @@ const LandingPage = () => (
             </Canvas>
         </Suspense>
         {/* <Overlay /> */}
-        <Footer />
+        {/* <Footer /> */}
     </>
 )
 
