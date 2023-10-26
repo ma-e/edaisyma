@@ -20,6 +20,11 @@ body {
   font-family: "Inter var", sans-serif;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 @media screen and (max-width: 568px) {
   .full {
     visibility: hidden;
