@@ -24,6 +24,7 @@ body {
 a {
   text-decoration: none;
   color: inherit;
+  text-align: center;
 }
 
 @media screen and (max-width: 568px) {
