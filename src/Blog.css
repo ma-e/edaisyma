@@ -21,11 +21,8 @@
 .blog-list-item {
     margin: 10px 0;
     padding: 50px;
-    /* Add padding around each list item */
     background-color: #f5f5f5;
-    /* Background color */
     border: 1px solid #ddd;
-    /* Border */
     border-radius: 5px;
     /* Rounded corners */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
