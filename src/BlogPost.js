@@ -17,6 +17,10 @@ const BlogPost = () => {
     return (
         <>
             <div className="container">
+                <div className="header">
+                    <h1>M.</h1>
+                    <p>"COMING SOON."</p>
+                </div>
                 <h1 className="blog-title">{blog.title}</h1>
                 <p className="blog-content">{blog.content}</p>
             </div>

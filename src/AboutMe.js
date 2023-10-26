@@ -10,10 +10,10 @@ const AboutMe = () => {
     return (
         <div className="container">
             <div className="about-section">
-                <h1 className='title'>About Me</h1>
-                <p>
-                    I am a passionate and driven software engineer with a love for solving complex problems through code. With a strong foundation in computer science and a keen eye for detail, I thrive in the dynamic world of software development. My journey in this field has been characterized by a commitment to continuous learning and a desire to stay at the forefront of technology. Whether it's building web applications, crafting elegant algorithms, or optimizing databases, I enjoy every aspect of the software development process. I am dedicated to creating high-quality, efficient, and user-friendly solutions that make a positive impact. When I'm not coding, you can find me exploring new technologies, sharing knowledge with the developer community, or pursuing my other interests.
-                </p>
+                <div className="header">
+                    <h1>M.</h1>
+                    <p>"I AM A SOFTWARE ENGINEER BASED IN FREMONT, CALIFORNIA."</p>
+                </div>
                 <a href="mailto:edaisyma@gmail.com"><p className="button">Contact</p></a>
             </div>
 

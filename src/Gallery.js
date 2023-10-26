@@ -25,7 +25,7 @@ function Gallery() {
         <div className="container">
             <div className="header">
                 <h1>M.</h1>
-                <p>THERE ARE NO MISTSKES IN ART</p>
+                <p>"THERE ARE NO MISTSKES IN ART."</p>
             </div>
             <div className="gallery-row">
                 <div className="gallery-column">

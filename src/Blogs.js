@@ -1,5 +1,5 @@
 const blogs = [
-    { id: 1, title: 'Do things with a heart', content: 'I can add blog with images here without touch source code is the goal.' },
-    { id: 2, title: 'October 22, 2023', content: 'Launching shortly.' },
+    { id: 1, title: 'Do things with a heart', cover: require("./config/works/b1.png"), date: "2023-10-20", content: 'I can add blog with images here without touch source code is the goal.' },
+    { id: 2, title: 'October 22, 2023', cover: require("./config/works/pr2.jpg"), date: "2023-10-28", content: 'Launching shortly.' },
 ];
 export default blogs;
