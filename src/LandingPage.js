@@ -10,7 +10,7 @@ import Footer from './Footer';
 import { Text } from "@react-three/drei";
 
 THREE.ColorManagement.legacyMode = false
-const baubleMaterial = new THREE.MeshLambertMaterial({ color: "#c0a0a0", emissive: "red" })
+const baubleMaterial = new THREE.MeshLambertMaterial({ color: "purple", emissive: "red" })
 const sphereGeometry = new THREE.SphereGeometry(1, 28, 28)
 const baubles = [...Array(50)].map(() => ({ scale: [0.75, 0.75, 1, 1, 1.25][Math.floor(Math.random() * 5)] }))
 
@@ -73,7 +73,7 @@ const LandingPage = () => (
                 <Text
                     position={[4, -2, 0]}
                     fontSize={8}
-                    color="Black"
+                    color="#212529"
                 >
                     M.
                 </Text>

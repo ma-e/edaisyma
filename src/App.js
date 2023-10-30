@@ -1,4 +1,3 @@
-// Import the necessary components
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Menu from './Menu';
 import Ideas from "./Ideas";
@@ -10,6 +9,7 @@ import BlogPage from './BlogPage';
 import BlogPost from './BlogPost';
 import Contact from "./Contact";
 import Gallery from "./Gallery";
+import Shop from "./Shop";
 
 function App() {
   return (
@@ -23,6 +23,7 @@ function App() {
           <Route path="/ideas" element={<Ideas />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/gallery" element={<Gallery />} />
+          <Route path="/shop" element={<Shop />} />
           <Route path="/blog/:id" element={<BlogPost />} />
         </Routes>
       </BrowserRouter>

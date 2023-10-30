@@ -17,7 +17,7 @@ body,
 
 body {
   overscroll-behavior-y: none;
-  font-family: "Inter var", sans-serif;
+  font-family: 'Poppins', sans-serif;
   text-align: justify;
 }
 
