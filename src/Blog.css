@@ -24,6 +24,9 @@
     height: 100%;
     max-width: 100%;
     transform: translateY(-50px);
+    overflow: scroll;
+    overflow-x: hidden;
+    transform: translate3d(0px, -111px, 0px);
     /* padding: 50px; */
     /* background-color: #f5f5f5; */
     /* border: 1px solid #ddd; */
@@ -31,7 +34,7 @@
     /* Rounded corners */
     /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
     /* Box shadow for a subtle lift */
-    transition: background-color 0.3s ease;
+    /* transition: background-color 0.3s ease; */
 }
 
 .blog-list-item a {
