@@ -57,13 +57,15 @@
 }
 
 .about-section {
-    margin: 800;
-    padding: 50px;
+    /* margin: 80px; */
+    padding: 50px 500px;
     background-color: pink;
 }
 
 .container {
-    padding: 0 16px;
+    margin-top: 150px;
+    margin-bottom: 100px;
+    padding: 16px;
 }
 
 .container::after,

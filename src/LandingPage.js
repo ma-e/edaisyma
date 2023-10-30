@@ -7,6 +7,7 @@ import { BallCollider, Physics, RigidBody, CylinderCollider } from "@react-three
 import { Underlay, Overlay } from "./DirtyFigmaExport"
 import { Suspense } from "react"
 import Footer from './Footer';
+import { Text } from "@react-three/drei";
 
 THREE.ColorManagement.legacyMode = false
 const baubleMaterial = new THREE.MeshLambertMaterial({ color: "#c0a0a0", emissive: "red" })
@@ -69,6 +70,13 @@ const LandingPage = () => (
                     <SSAO samples={11} radius={0.15} intensity={20} luminanceInfluence={0.6} color="red" />
                     <SSAO samples={21} radius={0.03} intensity={15} luminanceInfluence={0.6} color="red" />
                 </EffectComposer>
+                <Text
+                    position={[4, -2, 0]}
+                    fontSize={8}
+                    color="Black"
+                >
+                    M.
+                </Text>
             </Canvas>
         </Suspense>
         {/* <Overlay /> */}

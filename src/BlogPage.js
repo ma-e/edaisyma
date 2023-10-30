@@ -15,29 +15,47 @@ const BlogPage = () => {
             <div className='container'>
                 <div className="header">
                     <h1>M.</h1>
-                    <p>"COMING SOON."</p>
+                    <p>"A PERSONAL BLOG."</p>
                 </div>
 
                 <ul className="blog-list">
-                    {blogs.map((blog) => {
+                    {blogs.map((blog, index) => {
+                        const isOdd = index % 2 === 1; // Check if the index is odd
                         return (
                             <li className="blog-list-item" key={blog.id}>
                                 <div className="blog-row">
+                                    {isOdd ? null : ( // Display image on the left for odd indexes
+                                        <div className="blog-column">
+                                            <div className="blog-card">
+                                                <img
+                                                    className="blog-profile-image"
+                                                    src={blog.cover}
+                                                    alt={blog.title}
+                                                />
+                                            </div>
+                                        </div>
+                                    )}
                                     <div className="blog-column">
                                         <div className="blog-card">
-                                            <img
-                                                className="blog-profile-image"
-                                                src={blog.cover}
-                                                alt={blog.title}
-                                            />
+                                            <Link to={`/blog/${blog.id}`}>
+                                                <p className="blog-title">{blog.title}</p>
+                                            </Link>
+                                            <Link to={`/blog/${blog.id}`}>
+                                                <p>LEARN MORE</p>
+                                            </Link>
                                         </div>
                                     </div>
-                                    <div className="blog-column">
-                                        <div className="blog-card">
-                                            <Link to={`/blog/${blog.id}`}>{blog.title}</Link>
+                                    {isOdd ? ( // Display image on the right for even indexes
+                                        <div className="blog-column">
+                                            <div className="blog-card">
+                                                <img
+                                                    className="blog-profile-image"
+                                                    src={blog.cover}
+                                                    alt={blog.title}
+                                                />
+                                            </div>
                                         </div>
-                                    </div>
-
+                                    ) : null}
                                 </div>
                             </li>
                         );

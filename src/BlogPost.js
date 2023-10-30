@@ -21,7 +21,7 @@ const BlogPost = () => {
                     <h1>M.</h1>
                     <p>"COMING SOON."</p>
                 </div>
-                <h1 className="blog-title">{blog.title}</h1>
+                <h1 className="blog-detail-title">{blog.title}</h1>
                 <p className="blog-content">{blog.content}</p>
             </div>
             {/* <Footer /> */}
