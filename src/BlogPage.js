@@ -14,11 +14,15 @@ const BlogPage = () => {
     return (
         <>
             <div className='container'>
-                <div className="header">
-                    <h1>M.</h1>
-                    <p>"A PERSONAL BLOG."</p>
+                <div className="about-section">
+                    <div className="header">
+                        <h1>Blog.</h1>
+                        <p>"A PERSONAL BLOG."</p>
+                    </div>
                 </div>
                 <br /><br />
+                <br /><br />
+
                 <ul className="blog-list">
                     {blogs.map((blog, index) => {
                         const isOdd = index % 2 === 1; // Check if the index is odd

@@ -1,6 +1,11 @@
 .header {
     text-align: center;
     padding: 32px;
+    font-size: 5em;
+}
+
+.header p {
+    font-size: 0.3em;
 }
 
 .gallery-row {

@@ -9,7 +9,9 @@ import BlogPage from './BlogPage';
 import BlogPost from './BlogPost';
 import Contact from "./Contact";
 import Gallery from "./Gallery";
-import Shop from "./Shop";
+import Store from "./Store";
+import Tree from "./Tree";
+import Classroom from "./Classroom";
 
 function App() {
   return (
@@ -23,7 +25,9 @@ function App() {
           <Route path="/ideas" element={<Ideas />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/gallery" element={<Gallery />} />
-          <Route path="/shop" element={<Shop />} />
+          <Route path="/tree" element={<Tree />} />
+          <Route path="/classroom" element={<Classroom />} />
+          <Route path="/store" element={<Store />} />
           <Route path="/blog/:id" element={<BlogPost />} />
         </Routes>
       </BrowserRouter>
