@@ -69,7 +69,6 @@ const BlogPage = () => {
                         );
                     })}
                 </ul>
-                <Footer />
             </div>
         </>
     );

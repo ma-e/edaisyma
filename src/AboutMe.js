@@ -11,7 +11,7 @@ const AboutMe = () => {
         <div className="container">
             <div className="about-section">
                 <div className="header">
-                    <h1>M.</h1>
+                    <h1>MÆ</h1>
                     <p>"I AM A SOFTWARE ENGINEER BASED IN FREMONT, CALIFORNIA."</p>
                 </div>
                 <a href="mailto:edaisyma@gmail.com"><p className="button">Contact</p></a>
@@ -31,8 +31,6 @@ const AboutMe = () => {
                     </div>
                 ))}
             </div>
-
-            <Footer />
         </div >
     );
 };

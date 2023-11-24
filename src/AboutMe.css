@@ -56,11 +56,6 @@
     padding: 0 8px;
 }
 
-.about-section {
-    padding: 50px 500px;
-    background-color: #907bab;
-}
-
 .container {
     margin-top: 150px;
     margin-bottom: 100px;
@@ -98,3 +93,9 @@
         display: block;
     }
 }
+
+.custom-py {
+    padding-top: 0.75rem; /* Adjust as needed */
+    padding-bottom: 0.75rem; /* Adjust as needed */
+  }
+  

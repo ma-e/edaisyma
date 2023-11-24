@@ -12,6 +12,8 @@ import Gallery from "./Gallery";
 import Store from "./Store";
 import Tree from "./Tree";
 import Classroom from "./Classroom";
+import Footer from './Footer';
+import Publications from './Publications';
 
 function App() {
   return (
@@ -27,9 +29,11 @@ function App() {
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/tree" element={<Tree />} />
           <Route path="/classroom" element={<Classroom />} />
+          <Route path="/publications" element={<Publications />} />
           <Route path="/store" element={<Store />} />
           <Route path="/blog/:id" element={<BlogPost />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </>
   );

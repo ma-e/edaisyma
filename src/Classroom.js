@@ -1,19 +1,34 @@
-import React from 'react'
-import Footer from './Footer';
+import React from 'react';
+import './AboutMe.css';
+import profileImage from './config/works/pr6.jpg';
+import classroomlogo from './Classroom.png';
+import maelogo from './mae.png';
+import ImageContentRow from './ImageContentRow';
 
-export default function Classroom() {
+const Classroom = () => {
     return (
-        <>
-            <div className='container'>
-                <div className="about-section">
-                    <div className="header">
-                        <h1>Classroom.</h1>
-                        <p>"Learning from anyone, anywhere."</p>
-                    </div>
+        <div class="container">
+            <div className="about-section">
+                <div className="header">
+                    <h1>MÆ</h1>
+                    <p>Projects</p>
                 </div>
-                <br /><br />
+
             </div>
-            <Footer />
-        </>
-    )
-}
+            <div className="row">
+                <ImageContentRow
+                    rowNumber={1}
+                    image={classroomlogo}
+                    content="Learning from anyone and anywhere."
+                />
+                <ImageContentRow
+                    rowNumber={2}
+                    image={maelogo}
+                    content="Bridge the connection between the designer and the factory."
+                />
+            </div>
+        </div>
+    );
+};
+
+export default Classroom;

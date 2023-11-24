@@ -3,20 +3,28 @@ import './Menu.css';
 
 const Menu = () => {
   return (
-    <div className="menu">
-      <ul>
-        <li><a href="/"></a></li>
-        <li><a href="/">&#10084;</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/blog">Blog</a></li>
-        <li><a href="/store">Store</a></li>
-        <li><a href="/tree">Tree</a></li>
-        <li><a href="/classroom">Classroom</a></li>
-        {/* <li><a href="/contact">Contact</a></li> */}
-        {/* <li><a href="/gallery">Gallery</a></li> */}
-        {/* <li><a href="/ideas">Ideas</a></li> */}
-      </ul>
-    </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="/">MÆ</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="/about">About <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/publications">Publications</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/gallery">Gallery</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/classroom">Projects</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
   );
 };
 

@@ -9,7 +9,7 @@ import pr3 from './config/works/pr3.jpg';
 import pr4 from './config/works/pr4.jpg';
 import pr5 from './config/works/pr5.jpg';
 import "./Gallery.css"
-import Footer from './Footer';
+import TwoPicturesRow from './TwoPicturesRow';
 
 const images = [pr0, pr1, pr2, pr3, pr4, pr5, mao, babyBird, cubanBird];
 const randomizedImages = randomizeArrayOrder(images);
@@ -24,41 +24,11 @@ function Gallery() {
     return (
         <div className="container">
             <div className="header">
-                <h1>M.</h1>
+                <h1>MÆ</h1>
                 <p>"THERE ARE NO MISTSKES IN ART."</p>
             </div>
-            <div className="gallery-row">
-                <div className="gallery-column">
-                    {images.map((img, i) =>
-                        <div key={i}>
-                            <img src={img} />
-                        </div>
-                    )}
-                </div>
-                <div className="gallery-column">
-                    {randomizedImages.map((img, i) =>
-                        <div key={i}>
-                            <img src={img} />
-                        </div>
-                    )}
-                </div>
-                <div className="gallery-column">
-                    {randomizedImages1.map((img, i) =>
-                        <div key={i}>
-                            <img src={img} />
-                        </div>
-                    )}
-                </div>
-                <div className="gallery-column">
-                    {randomizedImages2.map((img, i) =>
-                        <div key={i}>
-                            <img src={img} />
-                        </div>
-                    )}
-                </div>
-            </div>
-            <Footer />
-        </div >
+            <TwoPicturesRow imageSrcArray={images} />
+                    </div >
     );
 }
 

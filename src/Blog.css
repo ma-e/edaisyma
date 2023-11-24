@@ -114,9 +114,9 @@
 }
 
 .about-section {
-    margin: 800;
     padding: 50px;
-    background-color: #907bab;
+    background-color: #FFB6C1;
+    margin-bottom: 20px; /* Bottom margin */
 }
 
 .container {}

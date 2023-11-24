@@ -19,7 +19,7 @@ const BlogPost = () => {
             <div className="container">
                 <div className="about-section">
                     <div className="header">
-                        <h1>M.</h1>
+                        <h1>MÆ</h1>
                         <p>"COMING SOON."</p>
                     </div>
                 </div>

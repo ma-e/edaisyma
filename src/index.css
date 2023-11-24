@@ -27,9 +27,6 @@ a {
   text-align: center;
 }
 
-.footer {
-  margin-bottom: 50px;
-}
 
 @media screen and (max-width: 568px) {
   .full {

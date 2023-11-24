@@ -13,7 +13,6 @@ export default function Tree() {
                     </div>
                 </div>
             </div>
-            <Footer />
         </>
     )
 }
