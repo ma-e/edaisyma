@@ -10,7 +10,7 @@ import Footer from './Footer';
 import { Text } from "@react-three/drei";
 
 THREE.ColorManagement.legacyMode = false
-const baubleMaterial = new THREE.MeshLambertMaterial({ color: "purple", emissive: "red" })
+const baubleMaterial = new THREE.MeshLambertMaterial({ color: "#a088b4", emissive: "black" })
 const sphereGeometry = new THREE.DodecahedronGeometry(1, 28, 28)
 const baubles = [...Array(50)].map(() => ({ scale: [0.75, 0.75, 1, 1, 1.25][Math.floor(Math.random() * 5)] }))
 
@@ -60,18 +60,18 @@ const LandingPage = () => (
                 <ambientLight intensity={1} />
                 <spotLight position={[20, 20, 25]} penumbra={1} angle={0.2} color="white" castShadow shadow-mapSize={[512, 512]} />
                 <directionalLight position={[0, 5, -4]} intensity={4} />
-                <directionalLight position={[0, -15, -0]} intensity={4} color="red" />
+                <directionalLight position={[0, -15, -0]} intensity={4} color="black" />
                 <Physics gravity={[0, 0, 0]}>
                     <Pointer />
                     {baubles.map((props, i) => <Bauble key={i} {...props} />)}
                 </Physics>
                 <Environment files="/adamsbridge.hdr" />
                 <EffectComposer multisampling={0}>
-                    <SSAO samples={11} radius={0.15} intensity={20} luminanceInfluence={0.6} color="red" />
-                    <SSAO samples={21} radius={0.03} intensity={15} luminanceInfluence={0.6} color="red" />
+                    <SSAO samples={11} radius={0.15} intensity={20} luminanceInfluence={0.6} color="black" />
+                    <SSAO samples={21} radius={0.03} intensity={15} luminanceInfluence={0.6} color="black" />
                 </EffectComposer>
                 <Text
-                    position={[4, -2, 0]}
+                    position={[2, -2, 0]}
                     fontSize={8}
                     color="#212529"
                 >

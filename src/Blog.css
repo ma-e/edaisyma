@@ -116,12 +116,10 @@
 .about-section {
     margin: 800;
     padding: 50px;
-    background-color: #ab989d;
+    background-color: #907bab;
 }
 
-.container {
-    padding: 0 16px;
-}
+.container {}
 
 .container::after,
 .blog-row::after {

@@ -11,10 +11,6 @@ export default function Store() {
                         <p>"New Arrivals"</p>
                     </div>
                 </div>
-                {/* <div className="header">
-                    <h1>M.</h1>
-                    <p>"New Arrivals"</p>
-                </div> */}
                 <br /><br />
             </div>
             <Footer />
