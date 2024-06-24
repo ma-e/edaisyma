@@ -1,0 +1,17 @@
+.cute-cursor {
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    width: 30px; /* Adjust width and height as needed */
+    height: 30px;
+    mix-blend-mode: difference; /* Optional: blend mode for cursor visibility */
+  }
+  
+  .cute-cursor img {
+    width: 100%;
+    height: 100%;
+    user-drag: none;
+    color: transparent;
+    user-select: none;
+  }
+  

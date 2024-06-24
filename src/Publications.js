@@ -7,7 +7,7 @@ import ImageContentRow from './ImageContentRow'; // Assuming ImageContentRow.js 
 
 const Publications = () => {
   return (
-    <div class="container">
+    <div className="container">
 
       <div className="about-section">
         <div className="header">

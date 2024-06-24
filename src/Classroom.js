@@ -7,7 +7,7 @@ import ImageContentRow from './ImageContentRow';
 
 const Classroom = () => {
     return (
-        <div class="container">
+        <div className="container">
             <div className="about-section">
                 <div className="header">
                     <h1>MAE</h1>

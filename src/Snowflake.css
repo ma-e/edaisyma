@@ -1,0 +1,28 @@
+.snowflake {
+    position: absolute;
+    top: -10px;
+    left: calc(100vw * calc(1.1 * random()));
+    animation: fall linear infinite;
+    animation-duration: calc(3s * random());
+    animation-delay: calc(-2s * random());
+    z-index: 10;
+  }
+  
+  .snowflake-shape {
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+    opacity: 0.8;
+    filter: blur(1px);
+  }
+  
+  @keyframes fall {
+    0% {
+      transform: translateY(-10vh);
+    }
+    100% {
+      transform: translateY(110vh);
+    }
+  }
+  

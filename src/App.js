@@ -12,17 +12,18 @@ import Gallery from "./Gallery";
 import Store from "./Store";
 import Tree from "./Tree";
 import Classroom from "./Classroom";
-import Footer from './Footer';
+import WorkPage from './WorkPage';
 import Publications from './Publications';
 
 function App() {
   return (
     <>
-      <Menu />
+      {/* <Menu /> */}
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/about" element={<AboutMe />} />
+          <Route path="/work" element={<WorkPage />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/ideas" element={<Ideas />} />
           <Route path="/blog" element={<BlogPage />} />
@@ -34,7 +35,7 @@ function App() {
           <Route path="/blog/:id" element={<BlogPost />} />
         </Routes>
       </BrowserRouter>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

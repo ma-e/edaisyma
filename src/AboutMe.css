@@ -1,99 +1,210 @@
-.about-me {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 90vh;
-    /* padding: 20px; */
+/* AboutMe.css */
+
+/* Set font size and family for the entire page */
+body {
+  font-size: 16px; /* Adjust the base font size as per your design */
+  font-family: Arial, sans-serif; /* Set a preferred font family */
 }
 
-.content {
-    /* text-align: center;
-    padding: 20px; */
+.about-me-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  /* background-color: #563d2d; */
+  background-color: transparent;
+
 }
 
-.content h1 {
-    font-size: 24px;
-    font-weight: bold;
+.about-section {
+  margin-bottom: 30px;
+  background-color: pink;
+  text-align: justify; /* Justify text for better alignment */
 }
 
-.image-container {
-    width: 500px;
-    height: 400px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    padding: 20px;
+.header {
+  margin-bottom: 20px;
+  text-align: justify; /* Justify text for better alignment */
 }
 
-.card {
-    overflow: hidden;
-    box-shadow: 0 4px 8px 0 rgba(241, 239, 239, 0.2);
-    margin: 8px;
-}
-
-.profile-image {
-    width: 30vw;
-    height: 30vw;
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contian;
-    /* -webkit-filter: grayscale(100%); */
-    /* filter: grayscale(100%); */
-}
-
-.content p {
-    font-size: 28px;
-    line-height: 2.5;
-    padding: 20px;
-}
-
-.column {
-    float: left;
-    width: 33.3%;
-    margin-bottom: 16px;
-    padding: 0 8px;
-}
-
-.container {
-    margin-top: 150px;
-    margin-bottom: 100px;
-}
-
-.container::after,
-.row::after {
-    content: "";
-    clear: both;
-    display: table;
-}
-
-.title {
-    text-align: center;
+.header h2 {
+  font-size: 1.5rem; /* Adjust header (h2) font size */
+  font-family: inherit; /* Inherit font family from body */
 }
 
 .button {
-    /* outline: 0; */
-    /* display: center; */
-    padding: 15px;
-    color: white;
-    background-color: #000;
-    width: 100%;
-    cursor: pointer;
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: white;
+  color: black;
+  border: black 3px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: none; /* Remove button decoration on hover */
+  font-family: inherit; /* Inherit font family from body */
 }
 
 .button:hover {
-    background-color: rgb(137, 131, 131);
+  text-decoration: none;
+  background-color: pink;
+  color: black; /* Change text color on hover */
+  border: 2px solid black; /* Add black border on hover */
+  transition: border-color 0.3s ease; /* Smooth transition for border color change */
 }
 
-@media screen and (max-width: 650px) {
-    .column {
-        width: 100%;
-        display: block;
-    }
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px; /* Adjust height as needed */
 }
 
-.custom-py {
-    padding-top: 0.75rem; /* Adjust as needed */
-    padding-bottom: 0.75rem; /* Adjust as needed */
+.card {
+  width: 100%;
+  max-width: 600px; /* Adjust maximum width of the image card */
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.image-slide {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-top: 1px solid #dee2e6;
+  font-family: inherit; /* Inherit font family from body */
+}
+
+/* Added styles for hobbies list */
+.hobbies-list {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 10px;
+  text-align: left;
+  font-style: italic;
+}
+
+.hobbies-list li {
+  margin-bottom: 8px;
+  font-size: 1.6rem; /* Adjust font size of list items */
+  font-family: inherit; /* Inherit font family from body */
+}
+
+/* General styles for the about page */
+.about-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.about-image {
+  max-width: 50%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.about-text {
+  text-align: center;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+  .about-page {
+    flex-direction: row;
   }
-  
+
+  .about-image {
+    max-width: 100%;
+    margin-bottom: 0;
+  }
+
+  .about-text {
+    margin-left: 20px;
+  }
+}
+
+/* General styles for the about page */
+.about-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.about-image {
+  max-width: 50%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.about-text {
+  text-align: center;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Work experience styles */
+.work-experience {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+.work-item {
+  width: calc(33% - 20px); /* Adjusted for spacing between items */
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}
+
+.company-logo {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.work-details {
+  /* Inherit font styles from parent */
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+  /* Adjust work experience layout for smaller screens */
+  .work-experience {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .work-item {
+    width: 100%;
+  }
+}

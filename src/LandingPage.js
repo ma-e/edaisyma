@@ -6,15 +6,19 @@ import { EffectComposer, SSAO } from "@react-three/postprocessing"
 import { BallCollider, Physics, RigidBody, CylinderCollider } from "@react-three/rapier"
 import { Suspense } from "react"
 import { Text } from "@react-three/drei";
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useNavigate } from 'react';
+import "./Layout.css"
+import Menu from './Menu';
+import './styles.css';
+import { Link } from 'react-router-dom';
 
 THREE.ColorManagement.legacyMode = false
-const baubleMaterial = new THREE.MeshLambertMaterial({ color: "black", emissive: "green", wireframe: true })
+const baubleMaterial = new THREE.MeshLambertMaterial({ color: "black", emissive: "#633F12", wireframe: true })
 const sphereGeometry = new THREE.DodecahedronGeometry(1, 28, 28)
 const baubles = [...Array(50)].map(() => ({ scale: [0.75, 0.75, 1, 1, 1.25][Math.floor(Math.random() * 5)] }))
 
 function AnimatedText() {
-    const fullText = "I'm E Ma.";
+    const fullText = "";
     const [displayText, setDisplayText] = useState('');
 
     useEffect(() => {
@@ -25,7 +29,7 @@ function AnimatedText() {
             if (index === fullText.length) {
                 clearInterval(interval);
             }
-        }, 450); // Change this value to control the speed of the animation
+        }, 100); // Change this value to control the speed of the animation
         return () => clearInterval(interval);
     }, []);
 
@@ -33,7 +37,7 @@ function AnimatedText() {
         const screenWidth = window.innerWidth;
         const screenHeight = window.innerHeight;
         return Math.min(screenWidth, screenHeight) * 0.003; // Adjust multiplier as per your design
-      };
+    };
 
     return (
         <Text
@@ -44,6 +48,7 @@ function AnimatedText() {
             anchorY="middle"   // Center the text vertically
         >
             {displayText}
+            {/* edaisyma@gmail.com */}
         </Text>
     );
 }
@@ -81,34 +86,37 @@ function Pointer({ vec = new THREE.Vector3() }) {
     )
 }
 
-const LandingPage = () => (
-
-    <Suspense fallback={null}>
-        <Canvas
-            shadows
-            gl={{ alpha: true, stencil: false, depth: true, antialias: false }}
-            camera={{ position: [0, 0, 20], fov: 32.5, near: 1, far: 100 }}
-            onCreated={(state) => {
-                state.gl.toneMappingExposure = 1.5; state.gl.setClearColor(0xffffff); // Set your desired background color here
-            }}
-        >
-            <ambientLight intensity={1} />
-            <spotLight position={[20, 20, 25]} pewnumbra={1} angle={0.2} color="blue" castShadow shadow-mapSize={[512, 512]} />
-            <directionalLight position={[0, 5, -4]} intensity={4} />
-            <directionalLight position={[0, -15, -0]} intensity={4} color="white" />
-            <Physics gravity={[0, 0, 0]}>
-                <Pointer />
-                {baubles.map((props, i) => <Bauble key={i} {...props} />)}
-            </Physics>
-            <Environment files="/adamsbridge.hdr" />
-            <EffectComposer multisampling={0}>
-                <SSAO samples={11} radius={0.15} intensity={20} luminanceInfluence={0.6} color="white" />
-                <SSAO samples={21} radius={0.03} intensity={15} luminanceInfluence={0.6} color="white" />
-            </EffectComposer>
-            <AnimatedText />
-
-        </Canvas>
-    </Suspense>
-)
+const LandingPage = () => {
+    return (
+        <Suspense fallback={null}>
+            <Canvas
+                shadows
+                gl={{ alpha: true, stencil: false, depth: true, antialias: false }}
+                camera={{ position: [0, 0, 20], fov: 32.5, near: 1, far: 100 }}
+                onCreated={(state) => {
+                    state.gl.toneMappingExposure = 1.5; state.gl.setClearColor("#F7E4CB"); // Set your desired background color here
+                }}
+            >
+                <ambientLight intensity={1} />
+                <spotLight position={[20, 20, 25]} pewnumbra={1} angle={0.2} color="blue" castShadow shadow-mapSize={[512, 512]} />
+                <directionalLight position={[0, 5, -4]} intensity={4} />
+                <directionalLight position={[0, -15, -0]} intensity={4} color="white" />
+                <Physics gravity={[0, 0, 0]}>
+                    <Pointer />
+                    {baubles.map((props, i) => <Bauble key={i} {...props} />)}
+                </Physics>
+                <Environment files="/adamsbridge.hdr" />
+                <EffectComposer multisampling={0}>
+                    <SSAO samples={11} radius={0.15} intensity={20} luminanceInfluence={0.6} color="white" />
+                    <SSAO samples={21} radius={0.03} intensity={15} luminanceInfluence={0.6} color="white" />
+                </EffectComposer>
+                <AnimatedText />
+            </Canvas>
+            <Link to="/about" className="pretty-button">
+                Say Hello!
+            </Link>
+        </Suspense>
+    )
+}
 
 export default LandingPage;

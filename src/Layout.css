@@ -1,0 +1,35 @@
+.pretty-button {
+    position: absolute;
+    top: 50%; /* Position button vertically at 50% from top */
+    left: 50%; /* Position button horizontally at 50% from left */
+    transform: translate(-50%, -50%); /* Center the button */
+    z-index: 1;
+    padding: 10px 20px;
+    font-size: 5rem; /* Increase font size for bigger icon */
+    background-color: burlywood; /* Bootstrap Primary Color */
+    color: #563d2d; /* Change to appropriate text color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    text-decoration: none; /* Remove underline */
+}
+
+.pretty-button:hover {
+    background-color: burlywood;
+    color: white;
+    transform: translate(-50%, -50%) scale(3); /* Scale and keep centered */
+    text-decoration: none; /* Remove underline on hover */
+}
+
+.pretty-button:active {
+    background-color: #563d2d;
+    transform: scale(0.95);
+}
+
+@media (max-width: 600px) {
+    .pretty-button {
+        font-size: 3rem; /* Adjust font size for smaller screens */
+        padding: 8px 16px;
+    }
+}
