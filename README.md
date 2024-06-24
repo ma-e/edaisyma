@@ -1,4 +1,4 @@
-# edaisma.com
+# toomae.com
 This project is where I publish my art works.
 
 # Command
