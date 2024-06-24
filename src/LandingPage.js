@@ -29,10 +29,17 @@ function AnimatedText() {
         return () => clearInterval(interval);
     }, []);
 
+    const calculateFontSize = () => {
+        const screenWidth = window.innerWidth;
+        const screenHeight = window.innerHeight;
+        // Calculate font size based on screen width (adjust as needed)
+        return Math.min(screenWidth, screenHeight) * 0.015; // Adjust multiplier as per your design
+      };
+
     return (
         <Text
             position={[2, 2, 0]}
-            fontSize={6}
+            fontSize={calculateFontSize()}
             color="#212529"
             anchorX="center"   // Center the text horizontally
             anchorY="middle"   // Center the text vertically

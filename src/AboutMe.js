@@ -8,13 +8,13 @@ import Footer from './Footer';
 
 const AboutMe = () => {
     return (
-        <div className="container display-1">
-            <div className="about-section">
+        <div className="container display-3">
+            {/* <div className="about-section"> */}
                 <div className="header">
-                    <p>"I AM E, A SOFTWARE ENGINEER."</p>
+                    <p>"I'm E Ma, a seasoned software engineer specializing in developing robust and scalable solutions that enhance user experiences and drive business growth. With a solid foundation in computer science and hands-on experience in both startup and corporate settings, I bring a blend of technical expertise and innovation to every project."</p>
                 </div>
                 <a href="mailto:edaisyma@gmail.com"><p className="button">LET'S TALK</p></a>
-            </div>
+            {/* </div> */}
 
             <div className="row">
                 {images.map((src, index) => (
