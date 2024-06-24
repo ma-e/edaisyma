@@ -14,7 +14,7 @@ const sphereGeometry = new THREE.DodecahedronGeometry(1, 28, 28)
 const baubles = [...Array(50)].map(() => ({ scale: [0.75, 0.75, 1, 1, 1.25][Math.floor(Math.random() * 5)] }))
 
 function AnimatedText() {
-    const fullText = 'MAE.';
+    const fullText = "I'm E Ma.";
     const [displayText, setDisplayText] = useState('');
 
     useEffect(() => {
@@ -32,8 +32,7 @@ function AnimatedText() {
     const calculateFontSize = () => {
         const screenWidth = window.innerWidth;
         const screenHeight = window.innerHeight;
-        // Calculate font size based on screen width (adjust as needed)
-        return Math.min(screenWidth, screenHeight) * 0.015; // Adjust multiplier as per your design
+        return Math.min(screenWidth, screenHeight) * 0.003; // Adjust multiplier as per your design
       };
 
     return (
@@ -87,14 +86,14 @@ const LandingPage = () => (
     <Suspense fallback={null}>
         <Canvas
             shadows
-            gl={{ alpha: true, stencil: false, depth: false, antialias: false }}
+            gl={{ alpha: true, stencil: false, depth: true, antialias: false }}
             camera={{ position: [0, 0, 20], fov: 32.5, near: 1, far: 100 }}
             onCreated={(state) => {
-                state.gl.toneMappingExposure = 1.5; state.gl.setClearColor('white'); // Set your desired background color here
+                state.gl.toneMappingExposure = 1.5; state.gl.setClearColor(0xffffff); // Set your desired background color here
             }}
         >
             <ambientLight intensity={1} />
-            <spotLight position={[20, 20, 25]} penumbra={1} angle={0.2} color="blue" castShadow shadow-mapSize={[512, 512]} />
+            <spotLight position={[20, 20, 25]} pewnumbra={1} angle={0.2} color="blue" castShadow shadow-mapSize={[512, 512]} />
             <directionalLight position={[0, 5, -4]} intensity={4} />
             <directionalLight position={[0, -15, -0]} intensity={4} color="white" />
             <Physics gravity={[0, 0, 0]}>

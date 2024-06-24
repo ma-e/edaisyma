@@ -10,15 +10,12 @@ body,
 #root {
   width: 100%;
   height: 100%;
-  margin: 0;
-  padding: 0;
-  /* background: linear-gradient(90deg, #e6eaf5 0%, #f6f6f6 50%); */
 }
 
 body {
   overscroll-behavior-y: none;
   font-family: 'Poppins', sans-serif;
-  text-align: justify;
+  flex-direction: column;
 }
 
 a {
@@ -34,3 +31,58 @@ a {
     display: none;
   }
 }
+
+footer
+{
+  background-color: white;
+  height: 60px;
+  /* text-align: center; */
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center; /* Center align items vertically */
+  justify-content: center; /* Center align items horizontally */
+}
+
+.logo-image {
+  height: 30px; /* Adjust the height to make the logo smaller */
+  width: auto; /* Maintain aspect ratio */
+  transition: transform 0.3s ease; /* Add a transition effect */
+}
+
+.navbar-logo:hover .logo-image {
+  transform: scale(1.1); /* Slightly enlarge the logo on hover */
+}
+
+.navbar {
+  background-color: #ffffff !important; /* Set the background color to white */
+}
+
+.navbar .container-fluid {
+  display: flex;
+  align-items: center; /* Center align items vertically */
+  justify-content: space-between; /* Space out items horizontally */
+}
+
+.navbar .navbar-brand {
+  display: flex;
+  align-items: center; /* Center align items vertically */
+}
+
+.navbar .navbar-toggler {
+  border: none; /* Remove border from the toggler */
+}
+
+.navbar .navbar-nav .nav-link {
+  color: #212529; /* Text color for nav links */
+}
+
+.navbar .navbar-nav .nav-link:hover {
+  color: red; /* Text color for nav links on hover */
+  text-decoration: line-through; /* Add strike-through effect on hover */
+}
+
+
+
+

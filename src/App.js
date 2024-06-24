@@ -33,8 +33,8 @@ function App() {
           <Route path="/store" element={<Store />} />
           <Route path="/blog/:id" element={<BlogPost />} />
         </Routes>
-        <Footer />
       </BrowserRouter>
+      <Footer />
     </>
   );
 }

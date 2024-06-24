@@ -4,16 +4,16 @@ import { FaInstagram, FaLinkedin, FaGithub } from 'react-icons/fa';
 
 function Footer() {
   return (
-    <footer className="bg-light py-1">
+    <footer className="footer">
       <Container>
-        <Row className="align-items-center">
-          <Col xs={12} md={8}>
-            <div className="text-left">
+        {/* <Row className="align-items-center"> */}
+          {/* <Col xs={12} md={8}> */}
+            <div className="text-center">
               &copy; {new Date().getFullYear()} MAE. ALL RIGHTS RESERVED.            
             </div>
-          </Col>
-          <Col xs={12} md={4}>
-            <div className="text-right">
+          {/* </Col> */}
+          {/* <Col xs={12} md={4}> */}
+            <div className="text-center">
             <li className="list-inline-item">
                 <a href="https://www.linkedin.com/in/m-483936232/">
                   <FaLinkedin />
@@ -30,9 +30,8 @@ function Footer() {
                 </a>
               </li>
             </div>
-          </Col>
-        </Row>
-        {/* <hr className="my-4" /> */}
+          {/* </Col> */}
+        {/* </Row> */}
       </Container>
     </footer>
   );
