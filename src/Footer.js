@@ -7,12 +7,12 @@ function Footer() {
     <footer className="bg-light py-1">
       <Container>
         <Row className="align-items-center">
-          <Col xs={12} md={6}>
+          <Col xs={12} md={8}>
             <div className="text-left">
-              &copy; {new Date().getFullYear()} MÆ. All rights reserved.            
+              &copy; {new Date().getFullYear()} MAE. ALL RIGHTS RESERVED.            
             </div>
           </Col>
-          <Col xs={12} md={6}>
+          <Col xs={12} md={4}>
             <div className="text-right">
             <li className="list-inline-item">
                 <a href="https://www.linkedin.com/in/m-483936232/">

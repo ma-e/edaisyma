@@ -8,13 +8,12 @@ import Footer from './Footer';
 
 const AboutMe = () => {
     return (
-        <div className="container">
+        <div className="container display-1">
             <div className="about-section">
                 <div className="header">
-                    <h1>MÆ</h1>
-                    <p>"I AM A SOFTWARE ENGINEER BASED IN FREMONT, CALIFORNIA."</p>
+                    <p>"I AM E, A SOFTWARE ENGINEER."</p>
                 </div>
-                <a href="mailto:edaisyma@gmail.com"><p className="button">Contact</p></a>
+                <a href="mailto:edaisyma@gmail.com"><p className="button">LET'S TALK</p></a>
             </div>
 
             <div className="row">

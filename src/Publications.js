@@ -11,8 +11,8 @@ const Publications = () => {
 
       <div className="about-section">
         <div className="header">
-          <h1>MÆ</h1>
-          <p>Book and Music</p>
+          <h1>MAE</h1>
+          <p>BOOK AND MUSIC</p>
         </div>
       </div>
 

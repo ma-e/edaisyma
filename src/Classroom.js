@@ -10,8 +10,8 @@ const Classroom = () => {
         <div class="container">
             <div className="about-section">
                 <div className="header">
-                    <h1>MÆ</h1>
-                    <p>Projects</p>
+                    <h1>MAE</h1>
+                    <p>PROJECTS</p>
                 </div>
 
             </div>

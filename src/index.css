@@ -12,7 +12,7 @@ body,
   height: 100%;
   margin: 0;
   padding: 0;
-  background: linear-gradient(90deg, #e6eaf5 0%, #f6f6f6 50%);
+  /* background: linear-gradient(90deg, #e6eaf5 0%, #f6f6f6 50%); */
 }
 
 body {

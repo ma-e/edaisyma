@@ -1,27 +1,17 @@
-.menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: transparent;
-    z-index: 1000;
-}
+/* Sticky Menu Styles */
+.navbar-collapse {
+    position: sticky;
+    top: 0; /* Adjust top value as needed */
+    height: calc(100vh - 56px); /* Adjust height based on your navbar height */
+    overflow-y: auto; /* Enable scrolling for the menu if it exceeds viewport height */
+  }
+  
+  @media (max-width: 991.98px) {
+    .navbar-collapse {
+      position: static; /* Reset for mobile view */
+      height: auto; /* Reset height for mobile view */
+      overflow-y: visible; /* Reset overflow for mobile view */
+    }
+  }
 
-.menu ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-}
-
-.menu li {
-    margin-right: 20px;
-    margin: 0 10px;
-    padding: 10px;
-}
-
-.menu a {
-    font-size: 36px;
-    text-decoration: none;
-    color: #212529;
-    font-weight: bold;
-}
+  

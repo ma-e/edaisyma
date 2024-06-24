@@ -24,8 +24,8 @@ function Gallery() {
     return (
         <div className="container">
             <div className="header">
-                <h1>MÆ</h1>
-                <p>"THERE ARE NO MISTSKES IN ART."</p>
+                <h1>MAE</h1>
+                <p>THERE ARE NO MISTSKES IN ART.</p>
             </div>
             <TwoPicturesRow imageSrcArray={images} />
                     </div >

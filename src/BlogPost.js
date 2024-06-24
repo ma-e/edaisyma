@@ -19,8 +19,8 @@ const BlogPost = () => {
             <div className="container">
                 <div className="about-section">
                     <div className="header">
-                        <h1>MÆ</h1>
-                        <p>"COMING SOON."</p>
+                        <h1>MAE</h1>
+                        <p>COMING SOON.</p>
                     </div>
                 </div>
                 <h1 className="blog-detail-title">{blog.title}</h1>
