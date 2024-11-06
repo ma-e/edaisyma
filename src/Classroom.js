@@ -4,30 +4,44 @@ import profileImage from './config/works/pr6.jpg';
 import classroomlogo from './Classroom.png';
 import maelogo from './mae.png';
 import ImageContentRow from './ImageContentRow';
+import catImg from "./config/works/cat1.gif";
+import Footer from './Footer';
+import Menu from './Menu';
 
 const Classroom = () => {
     return (
-        <div className="container">
-            <div className="about-section">
+        <>
+            <div className="about-me-container">
+                <Menu />
+
                 <div className="header">
-                    <h1>MAE</h1>
-                    <p>PROJECTS</p>
+
+                <img
+                        src={catImg}
+                        alt="About Us"
+                        style={{ width: '300px', height: 'auto' }}
+                    />   
                 </div>
 
+                <div className="row">
+                    <ImageContentRow
+                        rowNumber={1}
+                        image={classroomlogo}
+                        content="Learning from anyone and anywhere."
+                    />
+                    <ImageContentRow
+                        rowNumber={2}
+                        image={maelogo}
+                        content="Bridge the connection between the designer and the factory."
+                    />
+                </div>
+
+
             </div>
-            <div className="row">
-                <ImageContentRow
-                    rowNumber={1}
-                    image={classroomlogo}
-                    content="Learning from anyone and anywhere."
-                />
-                <ImageContentRow
-                    rowNumber={2}
-                    image={maelogo}
-                    content="Bridge the connection between the designer and the factory."
-                />
-            </div>
-        </div>
+            <Footer />
+
+        </>
+
     );
 };
 

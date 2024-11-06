@@ -75,13 +75,11 @@ footer
 
 .navbar .navbar-nav .nav-link {
   color: #212529; /* Text color for nav links */
-  font-weight: bold; /* Make nav links bold */
   transition: color 0.3s ease; /* Smooth transition for color change */
 }
 
 .navbar .navbar-nav .nav-link:hover {
-  color: #f37021; /* Text color for nav links on hover */
-  text-decoration: line-through; /* Add strike-through effect on hover */
+  font-weight: bold; /* Make nav links bold */
 }
 
 

@@ -10,6 +10,9 @@ import pr4 from './config/works/pr4.jpg';
 import pr5 from './config/works/pr5.jpg';
 import "./Gallery.css"
 import TwoPicturesRow from './TwoPicturesRow';
+import Footer from './Footer';
+import Menu from './Menu';
+import berryImg from "./config/works/gif-test1.gif";
 
 const images = [pr0, pr1, pr2, pr3, pr4, pr5, mao, babyBird, cubanBird];
 const randomizedImages = randomizeArrayOrder(images);
@@ -22,13 +25,25 @@ function randomizeArrayOrder(arr) {
 
 function Gallery() {
     return (
-        <div className="container">
-            <div className="header">
-                <h1>MAE</h1>
-                <p>THERE ARE NO MISTSKES IN ART.</p>
-            </div>
+        <>
+                <div className="about-me-container">
+                <Menu />
+
+                <div className="header">
+
+                <img
+  src={berryImg}
+  alt="About Us"
+  style={{ width: '300px', height: 'auto' }}
+/>                </div>
+
             <TwoPicturesRow imageSrcArray={images} />
-                    </div >
+
+        </div >
+
+                    <Footer />
+        </>
+
     );
 }
 

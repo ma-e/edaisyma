@@ -13,9 +13,9 @@ import './styles.css';
 import { Link } from 'react-router-dom';
 
 THREE.ColorManagement.legacyMode = false
-const baubleMaterial = new THREE.MeshLambertMaterial({ color: "black", emissive: "#633F12", wireframe: true })
+const baubleMaterial = new THREE.MeshLambertMaterial({ color: "white", emissive: "#F02070", wireframe: true }) // balls color
 const sphereGeometry = new THREE.DodecahedronGeometry(1, 28, 28)
-const baubles = [...Array(50)].map(() => ({ scale: [0.75, 0.75, 1, 1, 1.25][Math.floor(Math.random() * 5)] }))
+const baubles = [...Array(50)].map(() => ({ scale: [0.75, 0.75, 0.5, 1, 1.25][Math.floor(Math.random() * 5)] }))
 
 function AnimatedText() {
     const fullText = "";
@@ -89,12 +89,13 @@ function Pointer({ vec = new THREE.Vector3() }) {
 const LandingPage = () => {
     return (
         <Suspense fallback={null}>
+                        <Link to="/about">
             <Canvas
                 shadows
                 gl={{ alpha: true, stencil: false, depth: true, antialias: false }}
                 camera={{ position: [0, 0, 20], fov: 32.5, near: 1, far: 100 }}
                 onCreated={(state) => {
-                    state.gl.toneMappingExposure = 1.5; state.gl.setClearColor("#F7E4CB"); // Set your desired background color here
+                    state.gl.toneMappingExposure = 1.5; state.gl.setClearColor("#FFC0CB"); // Set your desired background color here
                 }}
             >
                 <ambientLight intensity={1} />
@@ -112,8 +113,6 @@ const LandingPage = () => {
                 </EffectComposer>
                 <AnimatedText />
             </Canvas>
-            <Link to="/about" className="pretty-button">
-                Say Hello!
             </Link>
         </Suspense>
     )

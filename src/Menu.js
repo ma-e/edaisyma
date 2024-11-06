@@ -1,15 +1,15 @@
 import React from 'react';
 import './Menu.css';
-import logo from './config/works/logo.png';
+import logo from './config/works/cat.gif';
 import { Navbar, Container } from 'react-bootstrap';
 
 const Menu = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container-fluid">
-        {/* <a className="navbar-brand" href="/"> &#x1F60D; &#x1F496; &#x1F43C; &#x1F431;</a> */}
+        <a className="navbar-brand" href="/"> </a>
         <Navbar.Brand href="/" className="navbar-logo">
-          <img src={logo} alt="Logo" className="logo-image" />
+        <img src={logo} alt="Logo" className="logo-image" style={{ padding: "30px", width: '150px', height: 'auto' }} />
         </Navbar.Brand>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon">
@@ -22,10 +22,10 @@ const Menu = () => {
               <a className="nav-link active" aria-current="page" href="/about">ABOUT</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/work">WORK</a>
+              <a className="nav-link" href="/classroom">PERSONAL PROJECTS</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/resume">RESUME</a>
+              <a className="nav-link" href="/gallery">GALLERY</a>
             </li>
           </ul>
         </div>
