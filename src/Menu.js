@@ -1,37 +1,21 @@
+// Menu.js
 import React from 'react';
 import './Menu.css';
-import logo from './config/works/cat.gif';
-import { Navbar, Container } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const Menu = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <div className="container-fluid">
-        <a className="navbar-brand" href="/"> </a>
-        <Navbar.Brand href="/" className="navbar-logo">
-        <img src={logo} alt="Logo" className="logo-image" style={{ padding: "30px", width: '150px', height: 'auto' }} />
-        </Navbar.Brand>
-        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon">
-            <i className="fas fa-bars"></i>
-          </span>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav ms-auto">
-            <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="/about">ABOUT</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/classroom">PERSONAL PROJECTS</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/gallery">GALLERY</a>
-            </li>
-          </ul>
-        </div>
+    <nav className="main-navbar">
+      <div className="navbar-brand">
+        MA<span className="heart">♥</span>E
       </div>
-    </nav>
 
+      <ul className="nav-links">
+        <li><Link to="/about">ABOUT</Link></li>
+        <li><Link to="/blog">BLOG</Link></li>
+        <li><Link to="/gallery">GALLERY</Link></li>
+      </ul>
+    </nav>
   );
 };
 

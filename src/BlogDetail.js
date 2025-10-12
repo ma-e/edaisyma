@@ -3,8 +3,9 @@ import { useParams } from 'react-router-dom';
 import blogs from './Blogs';
 import "./Blog.css"
 import Footer from './Footer';
+import Menu from './Menu';
 
-const BlogPost = () => {
+const BlogDetail = () => {
     const { id } = useParams(); // Use the useParams hook to get the 'id' parameter
 
     // Assuming 'blogs' is an array of blog posts
@@ -16,7 +17,9 @@ const BlogPost = () => {
 
     return (
         <>
-            <div className="container">
+            <div className="about-me-container">
+            <Menu />
+
                 <div className="about-section">
                     <div className="header">
                         <h1>MAE</h1>
@@ -26,8 +29,11 @@ const BlogPost = () => {
                 <h1 className="blog-detail-title">{blog.title}</h1>
                 <p className="blog-content">{blog.content}</p>
             </div>
+
+            <Footer />
+
         </>
     );
 };
 
-export default BlogPost;
+export default BlogDetail;
