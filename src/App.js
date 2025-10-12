@@ -8,7 +8,7 @@ import './styles.css';
 import BlogList from './BlogList';
 import BlogDetail from './BlogDetail';
 import Contact from "./Contact";
-import Gallery from "./Gallery";
+import Wishlist from "./Wishlist";
 import Store from "./Store";
 import Tree from "./Tree";
 import Classroom from "./Classroom";
@@ -30,7 +30,7 @@ function App() {
           <Route path="/blog" element={<BlogList />} />
           <Route path="/blog/:id" element={<BlogDetail />} />
 
-          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/wishlist" element={<Wishlist />} />
           <Route path="/tree" element={<Tree />} />
           <Route path="/classroom" element={<Classroom />} />
           <Route path="/publications" element={<Publications />} />
