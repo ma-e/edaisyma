@@ -37,7 +37,7 @@ const Menu = () => {
       <ul className="nav-links">
         <li><Link to="/about">ABOUT</Link></li>
         <li><Link to="/blog">BLOG</Link></li>
-        <li><Link to="/gallery">GALLERY</Link></li>
+        <li><Link to="/wishlist">WISHLIST</Link></li>
         <li>
           {isLoggedIn ? (
             <button onClick={handleLogoutClick} className="login-btn">Logout</button>
