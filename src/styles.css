@@ -5,9 +5,10 @@ body {
   color: #212529;
   font-size: 2em;
   text-align: left;
-  background-image: url('./config/works/gezi.png'); /* Example path */
+  /* Removed global background image for a cleaner look */
+  /* background-image: none; */
   /* background-size: cover; */
-  /* background-repeat: space; */
+  /* background-repeat: no-repeat; */
   /* background-position: center center; */
 
 

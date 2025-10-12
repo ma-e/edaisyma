@@ -2,6 +2,7 @@ import React, { useMemo, useState } from 'react';
 import Footer from './Footer';
 import Menu from './Menu';
 import './BlogList.css';
+import './Wishlist.css';
 import { useAuth } from './AuthContext';
 import { addWishlistItem, loadWishlist } from './wishlistStorage';
 
@@ -33,7 +34,7 @@ const Wishlist = () => {
 
   return (
     <>
-      <div className="about-me-container">
+      <div className="wishlist-page">
         <Menu />
 
         {isLoggedIn && (
