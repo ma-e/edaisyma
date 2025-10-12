@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import blogs from './Blogs';
+import { loadBlogs } from './blogStorage';
 import "./Blog.css"
 import Footer from './Footer';
 import Menu from './Menu';
@@ -8,8 +8,7 @@ import Menu from './Menu';
 const BlogDetail = () => {
     const { id } = useParams(); // Use the useParams hook to get the 'id' parameter
 
-    // Assuming 'blogs' is an array of blog posts
-    const blog = blogs.find((blog) => blog.id.toString() === id);
+    const blog = loadBlogs().find((blog) => blog.id.toString() === id);
 
     if (!blog) {
         return <div className="container blog-container">Blog not found.</div>;
