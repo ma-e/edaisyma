@@ -36,3 +36,18 @@
   color: #333;
   font-weight: 600;
 }
+
+.wishlist-meta {
+  padding: 0 12px;
+}
+
+.wishlist-variant {
+  margin: 4px 0 0;
+  color: #666;
+}
+
+.wishlist-price {
+  margin: 4px 0 0;
+  color: #111;
+  font-weight: 600;
+}
