@@ -86,7 +86,7 @@ const BlogList = () => {
             <div key={blog.id} className="blog-card">
               <Link to={`/blog/${blog.id}`} className="blog-link">
                 <img src={blog.cover} alt={blog.title} className="blog-image" />
-                {/* <p className="blog-title">{blog.title}</p> */}
+                <p className="blog-title">{blog.title}</p>
                 <p className="blog-date">{blog.date}</p>
               </Link>
             </div>
