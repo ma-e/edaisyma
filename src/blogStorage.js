@@ -1,6 +1,4 @@
-import seedBlogs from './Blogs';
-
-const LOCAL_STORAGE_BLOGS_KEY = 'mae_blogs_v1';
+const API_BASE = process.env.REACT_APP_API_BASE || 'http://localhost:4000';
 
 function getTodayIsoDate() {
   const now = new Date();
@@ -10,38 +8,44 @@ function getTodayIsoDate() {
   return `${yyyy}-${mm}-${dd}`;
 }
 
-export function loadBlogs() {
+export async function loadBlogs() {
   try {
-    const raw = localStorage.getItem(LOCAL_STORAGE_BLOGS_KEY);
-    if (!raw) {
-      localStorage.setItem(LOCAL_STORAGE_BLOGS_KEY, JSON.stringify(seedBlogs));
-      return [...seedBlogs];
-    }
-    const parsed = JSON.parse(raw);
-    if (!Array.isArray(parsed)) return [...seedBlogs];
-    return parsed;
+    const response = await fetch(`${API_BASE}/blogs`);
+    if (!response.ok) throw new Error('Failed to fetch blogs');
+    const data = await response.json();
+    return Array.isArray(data) ? data : [];
   } catch {
-    return [...seedBlogs];
+    return [];
   }
 }
 
-export function saveBlogs(blogs) {
+export async function loadBlogById(id) {
   try {
-    localStorage.setItem(LOCAL_STORAGE_BLOGS_KEY, JSON.stringify(blogs));
-  } catch {}
+    const response = await fetch(`${API_BASE}/blogs/${encodeURIComponent(id)}`);
+    if (!response.ok) return null;
+    return await response.json();
+  } catch {
+    return null;
+  }
 }
 
-export function addBlog({ title, cover, content }) {
-  const current = loadBlogs();
-  const nextId = current.reduce((maxId, post) => Math.max(maxId, Number(post.id) || 0), 0) + 1;
+export async function addBlog({ title, cover, content }) {
   const newPost = {
-    id: nextId,
     title: String(title || '').trim() || 'Untitled',
     cover: String(cover || '').trim(),
     date: getTodayIsoDate(),
     content: String(content || '').trim(),
   };
-  const updated = [newPost, ...current];
-  saveBlogs(updated);
-  return newPost;
+  try {
+    const response = await fetch(`${API_BASE}/blogs`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(newPost),
+    });
+    if (!response.ok) throw new Error('Failed to create blog');
+    const created = await response.json();
+    return created;
+  } catch {
+    return null;
+  }
 }
