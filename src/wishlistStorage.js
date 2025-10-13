@@ -1,36 +1,32 @@
-const LOCAL_STORAGE_WISHLIST_KEY = 'mae_wishlist_v1';
+const API_BASE = process.env.REACT_APP_API_BASE || 'http://localhost:4000';
 
-export function loadWishlist() {
+export async function loadWishlist() {
   try {
-    const raw = localStorage.getItem(LOCAL_STORAGE_WISHLIST_KEY);
-    if (!raw) {
-      localStorage.setItem(LOCAL_STORAGE_WISHLIST_KEY, JSON.stringify([]));
-      return [];
-    }
-    const parsed = JSON.parse(raw);
-    if (!Array.isArray(parsed)) return [];
-    return parsed;
+    const response = await fetch(`${API_BASE}/wishlist`);
+    if (!response.ok) throw new Error('Failed to fetch wishlist');
+    const data = await response.json();
+    return Array.isArray(data) ? data : [];
   } catch {
     return [];
   }
 }
 
-export function saveWishlist(items) {
-  try {
-    localStorage.setItem(LOCAL_STORAGE_WISHLIST_KEY, JSON.stringify(items));
-  } catch {}
-}
-
-export function addWishlistItem({ name, image }) {
-  const current = loadWishlist();
-  const nextId = current.reduce((maxId, item) => Math.max(maxId, Number(item.id) || 0), 0) + 1;
+export async function addWishlistItem({ name, image }) {
   const newItem = {
-    id: nextId,
     name: String(name || '').trim() || 'Untitled',
     image: String(image || '').trim(),
     date: new Date().toISOString().slice(0, 10),
   };
-  const updated = [newItem, ...current];
-  saveWishlist(updated);
-  return newItem;
+  try {
+    const response = await fetch(`${API_BASE}/wishlist`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(newItem),
+    });
+    if (!response.ok) throw new Error('Failed to create wishlist item');
+    const created = await response.json();
+    return created;
+  } catch {
+    return null;
+  }
 }

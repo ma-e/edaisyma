@@ -1,15 +1,33 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { loadBlogs } from './blogStorage';
+import { loadBlogById } from './blogStorage';
 import "./Blog.css"
 import Footer from './Footer';
 import Menu from './Menu';
 
 const BlogDetail = () => {
-    const { id } = useParams(); // Use the useParams hook to get the 'id' parameter
+    const { id } = useParams();
+    const [blog, setBlog] = useState(null);
+    const [isLoading, setIsLoading] = useState(true);
 
-    const blog = loadBlogs().find((blog) => blog.id.toString() === id);
+    useEffect(() => {
+        let isCancelled = false;
+        setIsLoading(true);
+        (async () => {
+            const fetched = await loadBlogById(id);
+            if (!isCancelled) {
+                setBlog(fetched);
+                setIsLoading(false);
+            }
+        })();
+        return () => {
+            isCancelled = true;
+        };
+    }, [id]);
 
+    if (isLoading) {
+        return <div className="container blog-container">Loading...</div>;
+    }
     if (!blog) {
         return <div className="container blog-container">Blog not found.</div>;
     }

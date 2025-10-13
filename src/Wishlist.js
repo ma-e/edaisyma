@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Footer from './Footer';
 import Menu from './Menu';
 import './BlogList.css';
@@ -14,15 +14,35 @@ const Wishlist = () => {
   const [name, setName] = useState('');
   const [image, setImage] = useState('');
   const [version, setVersion] = useState(0);
+  const [items, setItems] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
-  const items = useMemo(() => loadWishlist(), [version]);
+  useEffect(() => {
+    let isCancelled = false;
+    setIsLoading(true);
+    (async () => {
+      const fetched = await loadWishlist();
+      if (!isCancelled) {
+        setItems(Array.isArray(fetched) ? fetched : []);
+        setIsLoading(false);
+      }
+    })();
+    return () => {
+      isCancelled = true;
+    };
+  }, [version]);
 
-  const handleCreate = (e) => {
+  const handleCreate = async (e) => {
     e.preventDefault();
     if (!isLoggedIn) return;
-    const created = addWishlistItem({ name, image });
+    const created = await addWishlistItem({ name, image });
+    if (!created) {
+      alert('Failed to add wishlist item');
+      return;
+    }
     setName('');
     setImage('');
+    setItems((prev) => [created, ...prev]);
     setVersion((v) => v + 1);
     alert(`Added wishlist item #${created.id}`);
   };
@@ -56,14 +76,17 @@ const Wishlist = () => {
           </form>
         )}
 
-        <div className="blog-grid">
-          {items.map((item) => (
-            <div key={item.id} className="blog-card" onClick={() => handleCardClick(item)} style={{ cursor: 'pointer' }}>
-              <img src={item.image} alt={item.name} className="blog-image" />
-              <p className="blog-date">{item.name}</p>
-            </div>
-          ))}
-        </div>
+        {isLoading && <div className="blog-grid">Loading...</div>}
+        {!isLoading && (
+          <div className="blog-grid">
+            {items.map((item) => (
+              <div key={item.id} className="blog-card" onClick={() => handleCardClick(item)} style={{ cursor: 'pointer' }}>
+                <img src={item.image} alt={item.name} className="blog-image" />
+                <p className="blog-date">{item.name}</p>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
 
       <Footer />

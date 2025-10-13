@@ -1,5 +1,5 @@
 // BlogPage.js
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { loadBlogs, addBlog } from './blogStorage';
 import Footer from './Footer';
@@ -13,16 +13,37 @@ const BlogList = () => {
     const [cover, setCover] = useState('');
     const [content, setContent] = useState('');
     const [version, setVersion] = useState(0);
+    const [blogs, setBlogs] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
 
-    const blogs = useMemo(() => loadBlogs(), [version]);
+    useEffect(() => {
+        let isCancelled = false;
+        setIsLoading(true);
+        (async () => {
+            const fetched = await loadBlogs();
+            if (!isCancelled) {
+                setBlogs(Array.isArray(fetched) ? fetched : []);
+                setIsLoading(false);
+            }
+        })();
+        return () => {
+            isCancelled = true;
+        };
+    }, [version]);
 
-    const handleCreate = (e) => {
+    const handleCreate = async (e) => {
         e.preventDefault();
         if (!isLoggedIn) return;
-        const created = addBlog({ title, cover, content });
+        const created = await addBlog({ title, cover, content });
+        if (!created) {
+            alert('Failed to create post');
+            return;
+        }
         setTitle('');
         setCover('');
         setContent('');
+        // Optimistically update UI
+        setBlogs((prev) => [created, ...prev]);
         setVersion((v) => v + 1);
         alert(`Created post #${created.id}`);
     };
@@ -58,6 +79,8 @@ const BlogList = () => {
                   </form>
                 )}
 
+                {isLoading && <div className="blog-grid">Loading...</div>}
+                {!isLoading && (
                 <div className="blog-grid">
           {blogs.map((blog) => (
             <div key={blog.id} className="blog-card">
@@ -69,6 +92,7 @@ const BlogList = () => {
             </div>
           ))}
         </div>
+                )}
             </div>
 
             <Footer />

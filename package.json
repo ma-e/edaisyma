@@ -30,13 +30,15 @@
     "three": "0.146.0"
   },
   "devDependencies": {
-    "typescript": "3.8.3"
+    "typescript": "3.8.3",
+    "json-server": "^0.17.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build && echo '/* /index.html  200' | cat >build/_redirects ",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "serve:db": "json-server --watch db.json --port 4000"
   },
   "browserslist": [
     ">0.2%",
