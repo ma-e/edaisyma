@@ -1,3 +1,5 @@
+import blogsFallback from './Blogs';
+
 const API_BASE = process.env.REACT_APP_API_BASE || 'http://localhost:4000';
 
 function getTodayIsoDate() {
@@ -15,7 +17,8 @@ export async function loadBlogs() {
     const data = await response.json();
     return Array.isArray(data) ? data : [];
   } catch {
-    return [];
+    // Fallback to admin's static JSON bundled in the app
+    return Array.isArray(blogsFallback) ? blogsFallback : [];
   }
 }
 
@@ -25,7 +28,12 @@ export async function loadBlogById(id) {
     if (!response.ok) return null;
     return await response.json();
   } catch {
-    return null;
+    // Fallback to admin's static JSON bundled in the app
+    const numericId = Number(id);
+    const match = Array.isArray(blogsFallback)
+      ? blogsFallback.find((b) => String(b.id) === String(id) || b.id === numericId)
+      : null;
+    return match || null;
   }
 }
 
