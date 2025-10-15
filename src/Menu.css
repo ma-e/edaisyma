@@ -1,44 +1,17 @@
-/* Menu.css */
+/* Sticky Menu Styles */
+.navbar-collapse {
+    position: sticky;
+    top: 0; /* Adjust top value as needed */
+    height: calc(100vh - 56px); /* Adjust height based on your navbar height */
+    overflow-y: auto; /* Enable scrolling for the menu if it exceeds viewport height */
+  }
+  
+  @media (max-width: 991.98px) {
+    .navbar-collapse {
+      position: static; /* Reset for mobile view */
+      height: auto; /* Reset height for mobile view */
+      overflow-y: visible; /* Reset overflow for mobile view */
+    }
+  }
 
-.main-navbar {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px 0;
-  background-color: white;
-  border-bottom: 1px solid #eee;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-}
-
-.navbar-brand {
-  font-size: 1.8rem;
-  font-weight: 600;
-  letter-spacing: 2px;
-  margin-bottom: 10px;
-  color: black;
-}
-
-.heart {
-  color: pink;
-  margin: 0 4px;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 30px;
-  padding: 0;
-  margin: 0;
-}
-
-.nav-links li a {
-  text-decoration: none;
-  color: black;
-  font-size: 0.9rem;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-
-.nav-links li a:hover {
-  color: #777;
-}
+  
