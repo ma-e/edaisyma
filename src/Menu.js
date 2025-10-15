@@ -4,29 +4,6 @@ import logo from './config/works/cat.gif';
 import { Navbar, Container } from 'react-bootstrap';
 
 const Menu = () => {
-  const { isLoggedIn, login, logout } = useAuth();
-  const [showPrompt, setShowPrompt] = useState(false);
-  const [passphrase, setPassphrase] = useState('');
-
-  const handleLoginClick = () => {
-    setShowPrompt(true);
-  };
-
-  const handleConfirm = (e) => {
-    e.preventDefault();
-    const ok = login(passphrase);
-    if (!ok) {
-      alert('Incorrect passphrase');
-      return;
-    }
-    setPassphrase('');
-    setShowPrompt(false);
-  };
-
-  const handleLogoutClick = () => {
-    logout();
-  };
-
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container-fluid">
