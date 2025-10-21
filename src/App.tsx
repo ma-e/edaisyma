@@ -10,7 +10,6 @@ import Wishlist from './pages/Wishlist/Wishlist';
 // Components
 import Header from './components/Header/Header';
 // import Footer from './components/Footer/Footer';
-import Login from './components/Login';
 
 const App: React.FC = () => {
   return (
