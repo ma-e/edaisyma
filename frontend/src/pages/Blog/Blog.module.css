@@ -1,7 +1,9 @@
 .blogPage {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 2rem;
+  flex: 1;
+  padding: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
   }
   
   .blogForm {

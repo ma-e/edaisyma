@@ -11,6 +11,19 @@ main {
   font-style: normal;
 }
 
-body {
+/* Ensure the html/body take full height */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
   font-family: 'Assistant, sans-serif;', serif;
 }
+
+/* Root container for the app */
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Full viewport height */
+  background-color: pink;
+}
+

@@ -9,23 +9,25 @@ import Wishlist from './pages/Wishlist/Wishlist';
 
 // Components
 import Header from './components/Header/Header';
-// import Footer from './components/Footer/Footer';
+import Footer from './components/Footer/Footer';
+
+import styles from './App.module.css';
 
 const App: React.FC = () => {
   return (
     <Router>
+      <div className={styles.container}>
       <Header />
-      <main>
+      <main className={styles.content}>
         <Routes>
-          {/* <Route path="/" element={<Home />} /> */}
           <Route path="/blog" element={<Blog />} />
           <Route path="/comment" element={<Comment />} />
           <Route path="/wishlist" element={<Wishlist />} />
-          {/* Redirect unknown routes to Home */}
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>
-      {/* <Footer /> */}
+      <Footer />
+      </div>
     </Router>
   );
 };
