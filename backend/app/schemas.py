@@ -1,13 +1,13 @@
 from pydantic import BaseModel
 
-class UserCreate(BaseModel):
+class CommentCreate(BaseModel):
     name: str
-    email: str
+    comment: str
 
-class UserRead(BaseModel):
+class CommentRead(BaseModel):
     id: int
     name: str
-    email: str
+    comment: str
 
     class Config:
         orm_mode = True
