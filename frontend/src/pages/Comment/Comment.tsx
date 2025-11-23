@@ -10,33 +10,80 @@ interface Comment {
 const Comment: React.FC = () => {
   const [comments, setComments] = useState<Comment[]>([]);
   const [loading, setLoading] = useState(true);
+  const [name, setName] = useState('');
+  const [text, setText] = useState('');
+  const [submitting, setSubmitting] = useState(false);
 
   useEffect(() => {
-    const fetchComments = async () => {
-      try {
-        const res = await fetch('http://127.0.0.1:8000/comments/');
-        console.log({ res });
-        if (!res.ok) throw new Error('Failed to fetch comments');
-        const data: Comment[] = await res.json();
-        console.log("Data", data);
-        setComments(data);
-      } catch (err) {
-        console.error(err);
-      } finally {
-        setLoading(false);
-      }
-    };
-
     fetchComments();
   }, []);
+
+  const fetchComments = async () => {
+    try {
+      const res = await fetch('http://127.0.0.1:8000/comments/');
+      if (!res.ok) throw new Error('Failed to fetch comments');
+      const data: Comment[] = await res.json();
+      setComments(data);
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!name || !text) return;
+
+    setSubmitting(true);
+
+    try {
+      const res = await fetch('http://127.0.0.1:8000/comments/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id: 0, name, comment: text }),
+      });
+      if (!res.ok) throw new Error('Failed to post comment');
+
+      const newComment: Comment = await res.json();
+      setComments([newComment, ...comments]); // Add new comment to top
+      setName('');
+      setText('');
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setSubmitting(false);
+    }
+  };
 
   if (loading) return <p className={styles.commentPage}>Loading comments...</p>;
 
   return (
     <div className={styles.commentPage}>
       <h1>Comments</h1>
+
+      {/* Comment Form */}
+      <form onSubmit={handleSubmit} className={styles.commentForm}>
+        <input
+          type="text"
+          placeholder="Your name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          className={styles.input}
+        />
+        <textarea
+          placeholder="Write a comment..."
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+          className={styles.textarea}
+        />
+        <button type="submit" disabled={submitting} className={styles.button}>
+          {submitting ? 'Posting...' : 'Post Comment'}
+        </button>
+      </form>
+
       {comments.length === 0 ? (
-        <p>No comments yet.</p>
+        <p className={styles.noComments}>No comments yet.</p>
       ) : (
         <ul className={styles.commentList}>
           {comments.map((comment) => (
