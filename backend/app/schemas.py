@@ -11,3 +11,24 @@ class CommentRead(BaseModel):
 
     class Config:
         orm_mode = True
+
+# -------------------------
+# WishlistItem Schemas
+# -------------------------
+class WishlistItemCreate(BaseModel):
+    name: str
+    image_url: str
+    price: float
+    size: str
+    color: str
+
+class WishlistItemRead(BaseModel):
+    id: int
+    name: str
+    image_url: str
+    price: float
+    size: str
+    color: str
+
+    class Config:
+        orm_mode = True
