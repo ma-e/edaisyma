@@ -35,3 +35,18 @@ async def create_wishlist_item(
 async def get_wishlist_items(session: AsyncSession = Depends(get_session)):
     result = await session.execute(select(WishlistItem))
     return result.scalars().all()
+
+
+# DELETE Item by ID
+@router.delete("/{item_id}")
+async def delete_wishlist_item(item_id: int, session: AsyncSession = Depends(get_session)):
+    result = await session.execute(select(WishlistItem).where(WishlistItem.id == item_id))
+    item = result.scalar_one_or_none()
+
+    if not item:
+        raise HTTPException(status_code=404, detail="Item not found")
+
+    await session.delete(item)
+    await session.commit()
+
+    return {"message": "Item deleted successfully", "id": item_id}
