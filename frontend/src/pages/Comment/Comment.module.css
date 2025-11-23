@@ -3,16 +3,13 @@
     margin: 2rem auto;
     padding: 2rem;
     background-color: #f9f9f9;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    /* border-radius: 12px; */
     font-family: Arial, sans-serif;
   }
   
   .commentPage h1 {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    color: #333;
+    justify-self: center;
+    color: darkgray;
   }
   
   .commentForm {
@@ -24,7 +21,7 @@
   
   .input, .textarea {
     padding: 0.75rem;
-    border-radius: 8px;
+    /* border-radius: 8px; */
     border: 1px solid #ccc;
     font-size: 1rem;
     width: 100%;
@@ -39,8 +36,8 @@
   .button {
     padding: 0.75rem;
     border: none;
-    border-radius: 8px;
-    background-color: #4f46e5;
+    /* border-radius: 8px; */
+    background-color: pink;
     color: white;
     font-size: 1rem;
     cursor: pointer;
@@ -48,7 +45,7 @@
   }
   
   .button:hover {
-    background-color: #3730a3;
+    background-color: pink;
   }
   
   .button:disabled {
@@ -66,8 +63,8 @@
     padding: 1rem;
     margin-bottom: 1rem;
     background-color: #fff;
-    border-radius: 8px;
-    border-left: 4px solid #4f46e5;
+    /* border-radius: 8px; */
+    border-left: 4px solid pink;
   }
   
   .commentText {

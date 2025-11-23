@@ -91,7 +91,7 @@ const Wishlist: React.FC = () => {
 
   return (
     <div className={styles.wishlistPage}>
-      
+      <h1 className={styles.wishlistTitle}>WISHLIST</h1>
       {/* Admin Add Form */}
       {isAdmin && (
         <form onSubmit={handleAdd} className={styles.wishlistForm}>

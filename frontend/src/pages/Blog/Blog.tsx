@@ -28,12 +28,7 @@ const Blog: React.FC = () => {
 
   return (
     <div className={styles.blogPage}>
-      {/* <h1></h1> */}
-
-      {isAdmin && (
-        <p className={styles.adminNotice}>Admin can manage posts locally</p>
-      )}
-
+      <h1 className={styles.blogTitle}>BLOG</h1>
       <div className={styles.postsGrid}>
         {posts.map((post) => (
           <div key={post.id} className={styles.card}>

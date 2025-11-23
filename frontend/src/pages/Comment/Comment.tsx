@@ -60,7 +60,7 @@ const Comment: React.FC = () => {
 
   return (
     <div className={styles.commentPage}>
-      <h1>Comments</h1>
+      <h1>COMMENTS</h1>
 
       {/* Comment Form */}
       <form onSubmit={handleSubmit} className={styles.commentForm}>

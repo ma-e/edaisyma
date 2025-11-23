@@ -1,6 +1,11 @@
 .wishlistPage {
     padding: 2rem;
   }
+
+  .wishlistTitle {
+    justify-self: center;
+    color: darkgray;
+  }
   
   .wishlistForm {
     display: flex;

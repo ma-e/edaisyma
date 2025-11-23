@@ -9,6 +9,11 @@
   margin-top: 2rem;
 }
 
+.blogTitle {
+  justify-self: center;
+  color: darkgray;
+}
+
 .card {
   border: 1px solid #ddd;
   border-radius: 8px;
