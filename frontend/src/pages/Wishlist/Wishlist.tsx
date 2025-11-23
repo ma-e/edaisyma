@@ -22,7 +22,9 @@ const Wishlist: React.FC = () => {
 
   const BACKEND_URL = 'https://edaisyma.onrender.com/wishlist';
 
-  // Fetch wishlist from backend
+  // ✔ Your Venmo username
+  const VENMO_USERNAME = "woo-lala";
+
   useEffect(() => {
     const fetchWishlist = async () => {
       try {
@@ -36,7 +38,6 @@ const Wishlist: React.FC = () => {
     fetchWishlist();
   }, []);
 
-  // Admin: add item to backend
   const handleAdd = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!name || !image_url || !price || !size || !color) return;
@@ -55,7 +56,6 @@ const Wishlist: React.FC = () => {
       const savedItem = await res.json();
       setItems([...items, savedItem]);
 
-      // reset form
       setName('');
       setImage('');
       setPrice(0);
@@ -66,10 +66,14 @@ const Wishlist: React.FC = () => {
     }
   };
 
+  // ✔ Redirect to Venmo on card click
+  const handleCardClick = (item: WishlistItem) => {
+    const venmoUrl = `https://venmo.com/${VENMO_USERNAME}?txn=pay&amount=${item.price}&note=${encodeURIComponent(item.name)}`;
+    window.open(venmoUrl, "_blank");
+  };
+
   return (
     <div className={styles.wishlistPage}>
-      <h1>Wishlist</h1>
-
       {isAdmin && (
         <form onSubmit={handleAdd} className={styles.wishlistForm}>
           <input type="text" placeholder="Name" value={name} onChange={e => setName(e.target.value)} />
@@ -83,7 +87,12 @@ const Wishlist: React.FC = () => {
 
       <div className={styles.itemsGrid}>
         {items.map((item) => (
-          <div key={item.id} className={styles.card}>
+          <div
+            key={item.id}
+            className={styles.card}
+            onClick={() => handleCardClick(item)}
+            style={{ cursor: 'pointer' }}
+          >
             <img src={item.image_url} alt={item.name} className={styles.cardImage} />
             <h2>{item.name}</h2>
             <p>Price: ${item.price}</p>
