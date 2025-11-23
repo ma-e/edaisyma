@@ -1,0 +1,51 @@
+.commentPage {
+    max-width: 700px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); */
+    /* font-family: Arial, sans-serif; */
+  }
+  
+  .commentPage h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+  }
+  
+  .commentPage p {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #666;
+  }
+  
+  .commentList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .commentItem {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background-color: #fff;
+    border-radius: 8px;
+  }
+  
+  .commentText {
+    font-size: 1rem;
+    color: #333;
+    background-color: pink;
+    margin-bottom: 0.5rem;
+    border-radius: 12px;
+    padding: 1em;
+  }
+  
+  .commentAuthor {
+    font-size: 0.9rem;
+    color: #777;
+    font-style: italic;
+  }
+  
