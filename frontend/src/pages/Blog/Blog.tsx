@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { useAdmin } from '../../context/AdminContext';
 import styles from './Blog.module.css';
 
 interface Product {
@@ -10,7 +9,6 @@ interface Product {
 }
 
 const Blog: React.FC = () => {
-  const { isAdmin } = useAdmin();
   const [posts, setPosts] = useState<Product[]>([]);
 
   useEffect(() => {
