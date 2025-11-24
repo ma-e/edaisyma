@@ -20,10 +20,11 @@ const App: React.FC = () => {
       <Header />
       <main className={styles.content}>
         <Routes>
+          <Route path="/" element={<Navigate to="/wishlist" replace />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/comment" element={<Comment />} />
           <Route path="/wishlist" element={<Wishlist />} />
-          <Route path="*" element={<Navigate to="/" replace />} />
+          <Route path="*" element={<Navigate to="/wishlist" replace />} />
         </Routes>
       </main>
       <Footer />
