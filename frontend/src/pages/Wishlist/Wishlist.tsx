@@ -19,6 +19,7 @@ const Wishlist: React.FC = () => {
   const [price, setPrice] = useState<number>(0);
   const [size, setSize] = useState('');
   const [color, setColor] = useState('');
+  const [filter, setFilter] = useState('All');
 
   const BACKEND_URL = 'https://edaisyma.onrender.com/wishlist';
   const VENMO_USERNAME = "woo-lala";
@@ -89,9 +90,37 @@ const Wishlist: React.FC = () => {
     window.open(venmoUrl, "_blank");
   };
 
+  // Filtered items
+  const filteredItems = items.filter(item => {
+    const price = item.price;
+
+    switch (filter) {
+      case "0":
+        return price >= 0 && price < 100;
+      case "100":
+        return price >= 100 && price < 500;
+      case "500":
+        return price >= 500 && price < 2000;
+      case "2000":
+        return price >= 2000;
+      default:
+        return true; // "All"
+    }
+  });
+
+
   return (
     <div className={styles.wishlistPage}>
       <h1 className={styles.wishlistTitle}>WISHLIST</h1>
+      <label>Filter: </label>
+      <select value={filter} onChange={(e) => setFilter(e.target.value)}>
+        <option value="All">All</option>
+        <option value="0">0-100 </option>
+        <option value="100">100-500 </option>
+        <option value="500">500-2000 </option>
+        <option value="2000">2000+ </option>
+      </select>
+
       {/* Admin Add Form */}
       {isAdmin && (
         <form onSubmit={handleAdd} className={styles.wishlistForm}>
@@ -106,9 +135,9 @@ const Wishlist: React.FC = () => {
 
       {/* Grid Items */}
       <div className={styles.itemsGrid}>
-        {items.map((item) => (
-          <div 
-            key={item.id} 
+        {filteredItems.map((item) => (
+          <div
+            key={item.id}
             className={styles.card}
             onClick={() => !isAdmin && handleCardClick(item)}
             style={{ cursor: isAdmin ? "default" : "pointer" }}
@@ -119,21 +148,34 @@ const Wishlist: React.FC = () => {
             <p>Size: {item.size}</p>
             <p>Color: {item.color}</p>
 
-            {/* Admin-only Delete */}
             {isAdmin && (
-              <button 
+              <button
                 className={styles.deleteButton}
                 onClick={(e) => {
-                  e.stopPropagation(); // prevent Venmo redirect
+                  e.stopPropagation();
                   handleDelete(item.id);
                 }}
               >
                 Delete
               </button>
             )}
+
+            {!isAdmin && (
+              <button
+                className={styles.venmoButton}
+                onClick={(e) => {
+                  e.stopPropagation(); // prevent triggering card click twice
+                  handleCardClick(item);
+                }}
+              >
+                Spoil Me ₊✩‧₊˚౨ৎ˚₊✩‧₊
+              </button>
+            )}
+
           </div>
         ))}
       </div>
+
     </div>
   );
 };
