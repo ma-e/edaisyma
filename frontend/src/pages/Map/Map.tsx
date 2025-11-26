@@ -53,7 +53,7 @@ const VisitedCountriesMap: React.FC = () => {
             </div>
 
             <div className={styles.visitedMapIframeWrapper}>
-                <iframe src={iframeSrc} frameBorder={0} scrolling="yess"></iframe>
+                <iframe src={iframeSrc} frameBorder={0} scrolling="no"></iframe>
             </div>
         </div>
     );
