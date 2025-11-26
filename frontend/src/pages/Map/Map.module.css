@@ -1,0 +1,93 @@
+/* Map.module.css */
+
+.visitedMapContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 20px;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #ffffff;
+    color: #333333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .visitedMapTitle {
+    font-size: 28px;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+  }
+  
+  .visitedMapControls {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    width: 100%;
+  }
+  
+  .visitedMapInput {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .visitedMapInput input {
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 200px;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  .visitedMapInput input:focus {
+    border-color: #40bfa6; /* subtle accent color */
+  }
+  
+  .visitedMapInput button {
+    padding: 10px 20px;
+    background-color: #40bfa6;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .visitedMapInput button:hover {
+    background-color: #37a793;
+  }
+  
+  .visitedMapIframeWrapper {
+    width: 100%;
+    max-width: 1000px;
+    height: 600px;
+    border-radius: 8px;
+    overflow: hidden;
+    /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); */
+  }
+  
+  .visitedMapIframeWrapper iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+  
+  /* Optional: Responsive adjustments */
+  @media (max-width: 768px) {
+    .visitedMapTitle {
+      font-size: 24px;
+    }
+  
+    .visitedMapInput input {
+      width: 150px;
+    }
+  
+    .visitedMapIframeWrapper {
+      height: 400px;
+    }
+  }
+  

@@ -37,6 +37,7 @@ const Header: React.FC = () => {
         <Link to="/blog">BLOG</Link>
         <Link to="/comment">COMMENT</Link>
         <Link to="/wishlist">WISHLIST</Link>
+        <Link to="/map">MAP</Link>
 
         {/* Admin Login/Logout */}
         {isAdmin ? (
