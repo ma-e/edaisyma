@@ -21,7 +21,7 @@ const Wishlist: React.FC = () => {
   const [color, setColor] = useState('');
   const [filter, setFilter] = useState('All');
 
-  const BACKEND_URL = 'https://edaisyma.onrender.com/wishlist';
+  const BACKEND_URL = 'https://edaisymanosql.onrender.com/wishlist';
   const VENMO_USERNAME = "woo-lala";
 
   // Fetch wishlist items
