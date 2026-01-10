@@ -168,7 +168,7 @@ const Wishlist: React.FC = () => {
                   handleCardClick(item);
                 }}
               >
-                Spoil Me ₊✩‧₊˚౨ৎ˚₊✩‧₊
+                Spoil Me 
               </button>
             )}
 

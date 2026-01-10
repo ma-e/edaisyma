@@ -20,3 +20,8 @@ async def create_comment(comment: CommentCreate, session: AsyncSession = Depends
 async def get_comments(session: AsyncSession = Depends(get_session)):
     result = await session.execute(select(Comment))
     return result.scalars().all()
+
+@router.get("/", response_model=list[WishlistItemRead])
+async def get_wishlist_items(session: AsyncSession = Depends(get_session)):
+    result = await session.execute(select(WishlistItem))
+    return result.scalars().all()
