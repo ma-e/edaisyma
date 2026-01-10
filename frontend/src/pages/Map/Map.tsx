@@ -7,7 +7,7 @@ const VisitedCountriesMap: React.FC = () => {
 
     const [countries, setCountries] = useState<string[]>([
         "AT", "BE", "BS", "CA", "CN", "CO", "CZ", "DE", "ES", "FR", "GB", "GR", "HK",
-        "IT", "JP", "KR", "MX", "NL", "PR", "PT", "TH", "TW", "US"
+        "IT", "JP", "KR", "MX", "NL", "PR", "PT", "TH", "TW", "US", "CL"
     ]);
 
     const [input, setInput] = useState("");
