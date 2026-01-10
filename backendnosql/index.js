@@ -2,6 +2,7 @@ import express from "express";
 import { MongoClient } from "mongodb";
 import dotenv from "dotenv";
 import cors from "cors";
+import { ObjectId } from "mongodb";
 
 dotenv.config();
 
@@ -52,6 +53,29 @@ app.get("/wishlist", async (req, res) => {
   try {
     const wishlist = await db.collection("wishlist").find().toArray();
     res.json(wishlist);
+  } catch (err) {
+    console.error("MongoDB error:", err.message);
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// DELETE /wishlist/:id
+app.delete("/wishlist/:id", async (req, res) => {
+  const id = req.params.id;
+
+  if (!ObjectId.isValid(id)) {
+    return res.status(400).json({ error: "Invalid ID" });
+  }
+
+  try {
+    const result = await db.collection("wishlist").deleteOne({ _id: new ObjectId(id) });
+
+    if (result.deletedCount === 0) {
+      return res.status(404).json({ error: "Item not found" });
+    }
+
+    console.log(`Wishlist item deleted: ${id}`);
+    res.json({ message: "Item deleted successfully", id });
   } catch (err) {
     console.error("MongoDB error:", err.message);
     res.status(500).json({ error: err.message });
