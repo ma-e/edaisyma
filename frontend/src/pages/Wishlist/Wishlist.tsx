@@ -3,7 +3,7 @@ import { useAdmin } from '../../context/AdminContext';
 import styles from './Wishlist.module.css';
 
 interface WishlistItem {
-  id: number;
+  _id: string;
   name: string;
   image_url: string;
   price: number;
@@ -69,15 +69,15 @@ const Wishlist: React.FC = () => {
   };
 
   // Delete item
-  const handleDelete = async (id: number) => {
+  const handleDelete = async (_id: string) => {
     try {
-      const res = await fetch(`${BACKEND_URL}/${id}`, {
+      const res = await fetch(`${BACKEND_URL}/${_id}`, {
         method: 'DELETE'
       });
 
       if (!res.ok) throw new Error('Failed to delete item');
 
-      setItems(items.filter(item => item.id !== id));
+      setItems(items.filter(item => item._id !== _id));
     } catch (err) {
       console.error(err);
     }
@@ -153,7 +153,7 @@ const Wishlist: React.FC = () => {
                 className={styles.deleteButton}
                 onClick={(e) => {
                   e.stopPropagation();
-                  handleDelete(item.id);
+                  handleDelete(item._id);
                 }}
               >
                 Delete
