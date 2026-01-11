@@ -137,7 +137,7 @@ const Wishlist: React.FC = () => {
       <div className={styles.itemsGrid}>
         {filteredItems.map((item) => (
           <div
-            key={item.id}
+            key={item._id}
             className={styles.card}
             onClick={() => !isAdmin && handleCardClick(item)}
             style={{ cursor: isAdmin ? "default" : "pointer" }}
