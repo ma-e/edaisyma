@@ -82,8 +82,41 @@ app.delete("/wishlist/:id", async (req, res) => {
   }
 });
 
+app.get("/countries", async (req, res) => {
+    try {
+      const countries = await db.collection("countries").find().toArray();
+      // Return only the country codes as strings
+      const codes = countries.map((c) => c.code);
+      res.json(codes);
+    } catch (err) {
+      console.error("MongoDB error:", err.message);
+      res.status(500).json({ error: err.message });
+    }
+  });
+  
+  // POST a new country
+  app.post("/countries", async (req, res) => {
+    const code = (req.body.code || "").trim().toUpperCase();
+    if (!code) return res.status(400).json({ error: "Country code is required" });
+  
+    try {
+      // Check if country already exists
+      const exists = await db.collection("countries").findOne({ code });
+      if (exists) return res.status(409).json({ error: "Country already exists" });
+  
+      const result = await db.collection("countries").insertOne({ code });
+      console.log("Country added:", code);
+      res.status(201).json({ message: "Country added", code });
+    } catch (err) {
+      console.error("MongoDB error:", err.message);
+      res.status(500).json({ error: err.message });
+    }
+  });
+
 // Bind to IPv4
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, "0.0.0.0", () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
+
+
