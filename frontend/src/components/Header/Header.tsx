@@ -35,7 +35,7 @@ const Header: React.FC = () => {
 
       <nav className={styles.nav}>
         <Link to="/blog">BLOG</Link>
-        <Link to="/comment">COMMENT</Link>
+        {/* <Link to="/comment">COMMENT</Link> */}
         <Link to="/wishlist">WISHLIST</Link>
         <Link to="/map">MAP</Link>
 
